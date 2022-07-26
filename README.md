@@ -124,7 +124,7 @@
     <li>locks</li>
     <ul>
       <li>build_lock , a mutex</li>
-      <li>nat_tree_lock , a r/w lock</li>
+      <li>nat_tree_lock , a r/w lock , is used to protect NatE Cache</li>
       <li>nid_list_lock , a spin lock</li>
     </ul>
     <li>data flows</li>
