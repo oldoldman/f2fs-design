@@ -56,9 +56,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
        <li>NULL_ADDR, the NAT entry is free for allocating</li>
        <li>NEW_ADDR, the NAT entry is allocated but node is not allocated</li>
        <li>COMPRESS_ADDR</li>
-     <ul>
+     </ul>
     </ul>
-    <li>SSA is basicly anarray of SSA entry, indexed by Segment No</li>
+    <li>SSA is basicly an array of SSA entry, indexed by Segment No</li>
     <li>SSA entry has following information</li>
     <ul>
       <li>512 summary entries for the 512 blocks of the segment</li>
