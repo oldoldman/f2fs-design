@@ -1,6 +1,7 @@
 # f2fs-design
 # disk layout
-![image](https://user-images.githubusercontent.com/13962657/180906253-d999c88f-d2d3-4575-a981-09b89b752d60.png|height=250)
+<img src="https://user-images.githubusercontent.com/13962657/180906253-d999c88f-d2d3-4575-a981-09b89b752d60.png" width="100" height="100"></img>
+![image](https://user-images.githubusercontent.com/13962657/180906253-d999c88f-d2d3-4575-a981-09b89b752d60.png)
 # check point
 ![image](https://user-images.githubusercontent.com/13962657/180906481-b0a76994-8272-4bb5-9ce7-6f5f22cc0d94.png)
 # node
