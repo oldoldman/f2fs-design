@@ -1,4 +1,4 @@
-# f2fs-design
+# F2FS
 ## disk layout
 |figure|description|
 |------|-----------|
@@ -14,7 +14,7 @@
 |<img src="https://user-images.githubusercontent.com/13962657/180909701-02553dbb-af67-47e2-a951-3a08781db68e.png" width="220"></img>|Inode|
 |<img src="https://user-images.githubusercontent.com/13962657/180909757-6d8e60ac-e0ee-4a9c-86f7-c823f03aba6c.png" width="100"></img>|IndirectNode|
 |<img src="https://user-images.githubusercontent.com/13962657/180909796-54b0aeaf-9c94-4944-94d0-1131bc9ae9a5.png" width="100"></img>|DirectNode|
-## NAT/SIT/SSA
+## nat/sit/ssa
 |figure|description|
 |------|-----------|
 |<img src="https://user-images.githubusercontent.com/13962657/180914285-503a452c-2aed-44b9-baa5-67b1f5b7f319.png" width="220"></img>|NAT|
