@@ -58,6 +58,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
        <li>COMPRESS_ADDR</li>
      <ul>
     </ul>
+    <li>SSA is basicly anarray of SSA entry, indexed by Segment No</li>
+    <li>SSA entry has following information</li>
+    <ul>
+      <li>512 summary entries for the 512 blocks of the segment</li>
+      <li>journal</li>
+      <li>segment type : data or node</li>
+      <li>check sum</li>
+    </ul>
   <ol>
   </td>
 </tr>
