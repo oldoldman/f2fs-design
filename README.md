@@ -92,7 +92,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909701-02553dbb-af67-47e2-a951-3a08781db68e.png" width="220"></img></td>
   <td>
-  
+    <ol>
+      <li>InlineDataAddrs, this is an array of 923 entries , each entry is 4 bytes</li>
+      <ul>
+        <li>optionally, this array can be used to store extra attributes inline (ExtraAttr)</li>
+        <li>optionally, can be used to store extension attributes (InlineXAttr)
+        <li>theother portion is used to store address of inline data without allocating additional node
+      </ul>
+    </ol>
   </td>
 </tr>
 <tr valign="top">
