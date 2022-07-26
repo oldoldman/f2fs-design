@@ -118,7 +118,7 @@
 <table>
 <tr><td>figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180910969-4ca85a4b-c413-4cbb-a189-1cbeb799a2fc.png" width="300"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/180910969-4ca85a4b-c413-4cbb-a189-1cbeb799a2fc.png" width="350"></img></td>
   <td>
   
   </td>
@@ -129,7 +129,7 @@
 <table>
 <tr><td>figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="340"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="380"></img></td>
   <td>
   
   </td>
