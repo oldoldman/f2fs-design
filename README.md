@@ -1,8 +1,8 @@
 # f2fs-design
 # disk layout
-<img src="https://user-images.githubusercontent.com/13962657/180906253-d999c88f-d2d3-4575-a981-09b89b752d60.png" height="300"></img>
+<img src="https://user-images.githubusercontent.com/13962657/180906253-d999c88f-d2d3-4575-a981-09b89b752d60.png" height="350"></img>
 # check point
-![image](https://user-images.githubusercontent.com/13962657/180906481-b0a76994-8272-4bb5-9ce7-6f5f22cc0d94.png)
+<img src="https://user-images.githubusercontent.com/13962657/180906481-b0a76994-8272-4bb5-9ce7-6f5f22cc0d94.png" height="350"></img>
 # node
 ![image](https://user-images.githubusercontent.com/13962657/180906509-d9829dfb-f5eb-42e5-9aac-22faaf6ee1af.png)
 # NAT/SIT/SSA
