@@ -180,9 +180,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 
 ## Segment Manager
 <table>
-<tr><td wdith="50%">figure</td><td>description</td></tr>
+<tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="400"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="380"></img></td>
   <td>
     <ol>
       <li>CurSegs, an arry of curernt segments, f2fs allocate from curernt segment, there are 8 types of current segment</li>
