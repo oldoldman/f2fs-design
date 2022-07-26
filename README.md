@@ -17,9 +17,9 @@
 ## NAT/SIT/SSA
 |figure|description|
 |------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180911876-2658579c-4faf-48b4-83e2-d05648abbb19.png" width="220"></img>|NAT|
-|<img src="https://user-images.githubusercontent.com/13962657/180910789-0b664224-d8a5-4568-8cc9-938c056e7997.png" width="220"></img>|SIT|
-|<img src="https://user-images.githubusercontent.com/13962657/180911920-c063af6a-b871-4f6d-946d-425ec1ac8c6a.png" width="220"></img>|SSA|
+|<img src="https://user-images.githubusercontent.com/13962657/180914285-503a452c-2aed-44b9-baa5-67b1f5b7f319.png" width="220"></img>|NAT|
+|<img src="https://user-images.githubusercontent.com/13962657/180914330-e21e72c3-1f55-4f6e-b4c1-70768703738d.png" width="220"></img>|SIT|
+|<img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="220"></img>|SSA|
 # Linux Implementation
 ## Node Manager
 |figure|description|
@@ -28,6 +28,6 @@
 ## Segment Manager
 |figure|description|
 |------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="300"></img>|Segment Manager|
+|<img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="330"></img>|Segment Manager|
 
 
