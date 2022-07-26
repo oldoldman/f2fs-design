@@ -5,7 +5,8 @@
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img></td>
   <td>
-  1. most meta data(super block/checkpoint/NAT/SIT except SSA) are versioned(version0 and version1)<br>
+  <ol>
+    <li>most meta data(super block/checkpoint/NAT/SIT except SSA) are versioned(version0 and version1)</li>
   2. the purpose of meta data versioning is to balance the wirte of meta area<br>
   3. version switching happened at checkpointing<br>
   4. SIT is basicly an array of SIT entries , indexed by Segment No<br>
@@ -19,6 +20,7 @@
   5.1.1. NAT entry version<br>
   5.1.2. inode id<br>
   5.1.3. node block address<br>
+  <ol>
   </td>
 </tr>
 </table>
