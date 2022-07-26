@@ -1,4 +1,6 @@
+# summary
 this repo is notes of Linux f2fs file system in my preparation of porting f2fs to Windows.
+# TOC
 1. [F2FS](# F2FS)
   1. [disk layout](## disk layout overview)
   2. [checkpoint](## checkpoint)
