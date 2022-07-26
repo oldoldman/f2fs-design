@@ -116,7 +116,7 @@
 # Linux Implementation
 ## Node Manager
 <table>
-<tr><td width="30%">figure</td><td>description</td></tr>
+<tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180929385-82321194-585d-451d-8129-8c8395aee4f3.png" width="350"></img></td>
   <td>
