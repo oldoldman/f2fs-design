@@ -121,10 +121,15 @@
   <td><img src="https://user-images.githubusercontent.com/13962657/180910969-4ca85a4b-c413-4cbb-a189-1cbeb799a2fc.png" width="350"></img></td>
   <td>
     <ol>
+    <li>locks</li>
+    <ul>
+    </ul>
+    <li>data flows</li>
+    <ul>
       <li>green arrow is the data flow of free node building</li>
       <li>red arrow is the data flow of checkpoiting</li>
       <li>blue arrow is the data flow of NAT entry caching</li>
-    </ol>
+    </ul>
   </td>
 </tr>
 </table>
