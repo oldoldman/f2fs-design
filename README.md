@@ -180,7 +180,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 
 ## Segment Manager
 <table>
-<tr><td>figure</td><td>description</td></tr>
+<tr><td wdith="40%">figure</td><td>description</td></tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="380"></img></td>
   <td>
