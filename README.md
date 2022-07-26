@@ -20,10 +20,14 @@
       <ul>
     </ol>
     <li>NAT is basicly an array of NAT entries , indexed by Node ID</li>
-  5.1. NAT entry includes following information<br>
-  5.1.1. NAT entry version<br>
-  5.1.2. inode id<br>
-  5.1.3. node block address<br>
+    <ol>
+       <li>NAT entry includes following information</li>
+       <ul>
+         <li>NAT entry version</li>
+         <li>inode id</li>
+         <li>node block address</li>
+       </ul>
+    </ol>
   <ol>
   </td>
 </tr>
