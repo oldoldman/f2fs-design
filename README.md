@@ -220,8 +220,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <ul>
         <li>red arrow is the data flow of checkpointing</li>
         <li>green arrow is the data flow of SitE Cache loadinig</li>
-        <li>light blue arrow is the data flow of segment to section bitmap rollup</li>
-        <li>blue arrow is the data flow of segment allocation</li>
+        <li>light blue arrow is the data flow of segment to section bitmap rollup / dirty SitE bitmap update</li>
+        <li>blue arrow is the data flow of segment switching</li>
         <li>orange arrow is the data flow of dirty segment update</li>
       </ul>
       <li>DirtySegBitmaps is consist of 8 bitmaps</li>
