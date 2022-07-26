@@ -53,11 +53,28 @@
 </table>
 
 ## nat/sit/ssa
-|figure|description|
-|------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180914285-503a452c-2aed-44b9-baa5-67b1f5b7f319.png" width="220"></img>|NAT|
-|<img src="https://user-images.githubusercontent.com/13962657/180914330-e21e72c3-1f55-4f6e-b4c1-70768703738d.png" width="220"></img>|SIT|
-|<img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="220"></img>|SSA|
+<table>
+<tr><td>figure</td><td>description</td></tr>
+<tr valign="top">
+  <td><img src="https://user-images.githubusercontent.com/13962657/180914285-503a452c-2aed-44b9-baa5-67b1f5b7f319.png" width="220"></img></td>
+  <td>
+  
+  </td>
+</tr>
+<tr valign="top">
+  <td><img src="https://user-images.githubusercontent.com/13962657/180914330-e21e72c3-1f55-4f6e-b4c1-70768703738d.png" width="220"></img></td>
+  <td>
+  
+  </td>
+</tr>
+<tr valign="top">
+  <td><img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="220"></img></td>
+  <td>
+  
+  </td>
+</tr>
+</table>
+
 # Linux Implementation
 ## Node Manager
 |figure|description|
