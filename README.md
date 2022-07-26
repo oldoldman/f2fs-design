@@ -1,8 +1,8 @@
 # F2FS
 ## disk layout
-<div style="vertical-align:top">
+<div style="vertical-align:text-top">
 <img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img>
-1. All meta datas(super block/checkpoint/NAT/SIT/SSA) are versioned(version0 and version1) 
+1. All meta datas(super block/checkpoint/NAT/SIT/SSA) are versioned(version0 and version1) <br>
 2. version switch happened at checkpointing
 </div>
 
