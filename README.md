@@ -10,24 +10,20 @@
     <li>the purpose of meta data versioning is to balance the wirte of meta area</li>
     <li>version switching happened at checkpointing</li>
     <li>SIT is basicly an array of SIT entries , indexed by Segment No</li>
-    <ol>
-      <li>SIT entry has following information</li>
-      <ul>
-          <li>allocated block count of the segment</li>
-          <li>bitmap of allocated blocks</li>
-          <li>segment type : hot/warm/cold</li>
-          <li>the average access time of the segment , which is used in victim segment selection</li>
-      <ul>
-    </ol>
+    <li>SIT entry has following information</li>
+    <ul>
+     <li>allocated block count of the segment</li>
+     <li>bitmap of allocated blocks</li>
+     <li>segment type : hot/warm/cold</li>
+     <li>the average access time of the segment , which is used in victim segment selection</li>
+    </ul>
     <li>NAT is basicly an array of NAT entries , indexed by Node ID</li>
-    <ol>
-       <li>NAT entry includes following information</li>
-       <ul>
-         <li>NAT entry version</li>
-         <li>inode id</li>
-         <li>node block address</li>
-       </ul>
-    </ol>
+    <li>NAT entry includes following information</li>
+    <ul>
+     <li>NAT entry version</li>
+     <li>inode id</li>
+     <li>node block address</li>
+    </ul>
   <ol>
   </td>
 </tr>
