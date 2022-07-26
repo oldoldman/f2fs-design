@@ -129,9 +129,9 @@
     </ul>
     <li>data flows</li>
     <ul>
-      <li>green arrow is the data flow of free node building</li>
+      <li>green arrow is the data flow of FreeNode Cache building</li>
       <li>red arrow is the data flow of checkpoiting</li>
-      <li>blue arrow is the data flow of NAT entry caching</li>
+      <li>blue arrow is the data flow of NatE Cache loading</li>
     </ul>
   </td>
 </tr>
