@@ -159,8 +159,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ol>
     <li>locks</li>
     <ul>
-      <li>nid_list_lock, a spin lock, is used to protect FreeNode Cache/FreeNodeBitmap</li>
-      <li>nat_tree_lock, a rw lock, is used to protect NatE Cache</li>
+      <li>nid_list_lock, a spin lock, is used to protect FreeNode Cache / FreeNodeBitmap</li>
+      <li>nat_tree_lock, an rw lock, is used to protect NatE Cache</li>
       <li>build_lock, a mutex</li>      
     </ul>
     <li>data flows</li>
