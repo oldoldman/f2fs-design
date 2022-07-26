@@ -172,7 +172,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>FreeNodeBitmaps</li>
     <li>Full/EmptyBitmap</li>
     <ul>
-      <li>these 2 bitmap are enabled when CP_NAT_BITS_FLAG is set and maintained in at checkpoint time</li>
+      <li>these 2 bitmaps are enabled when CP_NAT_BITS_FLAG is set and maintained at checkpoint time</li>
       <li>if an NAT block is empty, the bit in EmptyBitmap will be set</li>
       <li>if an NAT block is full, the bit in FullBitmap will set set</li>
       <li>at mount time, these 2 bitmaps is used to update FreeNodeBitmaps and NATBlockBitmap</li>
@@ -180,7 +180,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>NATBlockBitmap</li>
     <ul>
       <li>set in process of scanning NAT</li>
-      <li>used as a guard of updating FreeNodeBitmaps</li>
+      <li>used as a guard for updating FreeNodeBitmaps</li>
     </ul>
     <li>FreeNode Cache building, this process happened at</li>
     <ul>
