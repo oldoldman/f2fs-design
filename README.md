@@ -1,7 +1,7 @@
 # F2FS
 ## disk layout overview
 <table>
-<tr><td width="30%">figure</td><td>description</td></tr>
+<tr><td width="25%">figure</td><td>description</td></tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img></td>
   <td>
