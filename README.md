@@ -1,7 +1,11 @@
 # F2FS
 this repo is notes of Linux f2fs file system in my preparation of porting f2fs to Windows.
 
-1. disk layout(## disk layout overview)
+1. [disk layout](## disk layout overview)
+2. [checkpoint](## checkpoint)
+3. [node](## node)
+4. [sit/nat/ssa](## nat/sit/ssa)
+5. [Linux Implementation](# Linux Implementation)
 
 ## disk layout overview
 <table>
