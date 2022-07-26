@@ -137,8 +137,8 @@
     <ul>
       <li>this process happened at</li>
         <ul>
-          <li>mount time</li>
-          <li>when there is not enough free node</li>
+          <li>mount time, will scan the on-disk NAT and NAT Journal</li>
+          <li>run time, when there is not enough free node, will scan the FreeNodeBitmap and NAT Jounal</li>
         </ul>
     </ul>
   </td>
