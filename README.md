@@ -154,7 +154,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <table>
 <tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180929385-82321194-585d-451d-8129-8c8395aee4f3.png" width="350"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/180964099-c52958c1-6440-4bf9-8eae-6371953ea9d9.png" width="350"></img></td>
   <td>
     <ol>
     <li>locks</li>
