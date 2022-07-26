@@ -124,7 +124,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/180909757-6d8e60ac-e0ee-4a9c-86f7-c823f03aba6c.png" width="100"></img></td>
   <td>
     <ol>
-        <li>a indirect node has 1018 nid entries, so, it will cover 1018 direct nodes or 1018 indirect nodes. in the former an indirect node will cover 1018*1018*4K bytes of data, in the latter, an indirect node will cover 1018*1018*1018*4K bytes of data
+        <li>an indirect node has 1018 nid entries, so, it will cover 1018 direct nodes or 1018 indirect nodes. in the former an indirect node will cover 1018*1018*4K bytes of data, in the latter, an indirect node will cover 1018*1018*1018*4K bytes of data
     </ol>
   </td>
 </tr>
