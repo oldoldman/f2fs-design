@@ -10,7 +10,7 @@
 # node
 |figure|description|
 |------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180909586-427beb46-c013-4873-8c2e-557ee2d3f853.png" height="250"></img>|NodeBlk|
+|<img src="https://user-images.githubusercontent.com/13962657/180909586-427beb46-c013-4873-8c2e-557ee2d3f853.png" width="200"></img>|NodeBlk|
 |<img src="https://user-images.githubusercontent.com/13962657/180909701-02553dbb-af67-47e2-a951-3a08781db68e.png" height="250"></img>|Inode|
 |<img src="https://user-images.githubusercontent.com/13962657/180909757-6d8e60ac-e0ee-4a9c-86f7-c823f03aba6c.png" height="250"></img>|IndirectNode|
 |<img src="https://user-images.githubusercontent.com/13962657/180909796-54b0aeaf-9c94-4944-94d0-1131bc9ae9a5.png" height="250"></img>|DirectNode|
