@@ -1,7 +1,7 @@
 # F2FS
 ## disk layout
-<table style="vertical-align:top">
-<tr>
+<table>
+<tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img></td>
   <td>
   1. All meta datas(super block/checkpoint/NAT/SIT/SSA) are versioned(version0 and version1) <br>
