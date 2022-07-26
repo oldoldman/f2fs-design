@@ -31,7 +31,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img></td>
   <td>
   <ol>
-    <li>most meta data(super block/checkpoint/NAT/SIT except SSA) are versioned(version0 and version1)</li>
+    <li>most of the frequently accessed meta data(super block/checkpoint/NAT/SIT except SSA) are versioned(version0 and version1)</li>
     <ul>
       <li>the purpose of meta data versioning is to balance the wirte of meta area</li>
       <li>version switching happened at checkpointing</li>
