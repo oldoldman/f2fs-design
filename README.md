@@ -159,9 +159,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ol>
     <li>locks</li>
     <ul>
-      <li>build_lock, a mutex</li>
-      <li>nat_tree_lock, a r/w lock, is used to protect NatE Cache</li>
       <li>nid_list_lock, a spin lock, is used to protect FreeNode Cache/FreeNodeBitmap</li>
+      <li>nat_tree_lock, a rw lock, is used to protect NatE Cache</li>
+      <li>build_lock, a mutex</li>      
     </ul>
     <li>data flows</li>
     <ul>
@@ -185,6 +185,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="380"></img></td>
   <td>
     <ol>
+      <li>locks</li>
+      <ul>
+        <li>segmap_lock, a spin lock, is used to protect FreeSegmentBitmap/FreeSectionBitmap</li>
+        <li>sentry_lock, a rw lock, is used to protect SitE Cache</li>
+        <li>journal_rwsem, a rw lock, is used to protect NAT/SIT journal</li>
+        <li>seglist_lock, a mutex, is used to protect DirtySegBitmap/DirtySecBitmap/VictimSecBitmap</li>
+        <li>curseg_mutex, a mutex, is used to protect CurSegs[n]</li>        
+      </ul>
       <li>CurSegs, an array of current segments, f2fs allocate node or data from current segment, there are 8 types of current segment</li>
       <ul>
         <li>hot data</li>
