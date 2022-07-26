@@ -169,6 +169,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>red arrow is the data flow of checkpoiting</li>
       <li>blue arrow is the data flow of NatE Cache loading</li>
     </ul>
+    <li>FreeNodeBitmaps</li>
     <li>FreeNode Cache building, this process happened at</li>
     <ul>
       <li>mount time, will scan the on-disk NAT and NAT Journal</li>
