@@ -19,14 +19,14 @@
 |------|-----------|
 |<img src="https://user-images.githubusercontent.com/13962657/180910761-20a70351-fb28-4d6a-8649-362cebb20a5b.png" width="220"></img>|NAT|
 |<img src="https://user-images.githubusercontent.com/13962657/180910789-0b664224-d8a5-4568-8cc9-938c056e7997.png" width="220"></img>|SIT|
-|<img src="https://user-images.githubusercontent.com/13962657/180910821-6f28d5ff-6a75-4a3e-a4fc-7ced7c839bac.png" width="100"></img>|SSA|
+|<img src="https://user-images.githubusercontent.com/13962657/180910821-6f28d5ff-6a75-4a3e-a4fc-7ced7c839bac.png" width="220"></img>|SSA|
 # Node Manager
 |figure|description|
 |------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180910969-4ca85a4b-c413-4cbb-a189-1cbeb799a2fc.png" width="220"></img>|Node Manager|
+|<img src="https://user-images.githubusercontent.com/13962657/180910969-4ca85a4b-c413-4cbb-a189-1cbeb799a2fc.png" width="250"></img>|Node Manager|
 # Segment Manager
 |figure|description|
 |------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="220"></img>|Segment Manager|
+|<img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="250"></img>|Segment Manager|
 
 
