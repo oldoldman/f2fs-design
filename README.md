@@ -2,7 +2,8 @@
 ## disk layout
 |figure|description|
 |------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img>|disk layout description|
+|<img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img>|* All meta datas(super block/checkpoint/NAT/SIT/SSA) are versioned(version0 and version1)
+*version switch happened at checkpointing|
 ## check point
 |figure|description|
 |------|-----------|
