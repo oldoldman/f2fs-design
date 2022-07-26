@@ -245,8 +245,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>hot node</li>
         <li>warm node</li>
         <li>cold node</li>
+        <li>pinned cold data</li>
+        <li>atgc</li>
       </ul>
-      <li>current segments can be selected from free segments or dirty segments</li>
     </ol>
   </td>
 </tr>
