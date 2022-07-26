@@ -23,10 +23,10 @@
 # Node Manager
 |figure|description|
 |------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180910969-4ca85a4b-c413-4cbb-a189-1cbeb799a2fc.png" width="250"></img>|Node Manager|
+|<img src="https://user-images.githubusercontent.com/13962657/180910969-4ca85a4b-c413-4cbb-a189-1cbeb799a2fc.png" width="300"></img>|Node Manager|
 # Segment Manager
 |figure|description|
 |------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="250"></img>|Segment Manager|
+|<img src="https://user-images.githubusercontent.com/13962657/180911020-f763e341-04a5-455c-8345-886f58c37254.png" width="300"></img>|Segment Manager|
 
 
