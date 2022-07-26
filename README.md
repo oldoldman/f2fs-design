@@ -133,13 +133,10 @@
       <li>red arrow is the data flow of checkpoiting</li>
       <li>blue arrow is the data flow of NatE Cache loading</li>
     </ul>
-    <li>FreeNode Cache building</li>
+    <li>FreeNode Cache building, this process happened at</li>
     <ul>
-      <li>this process happened at</li>
-        <ul>
-          <li>mount time, will scan the on-disk NAT and NAT Journal</li>
-          <li>run time, when there is not enough free node, will scan the FreeNodeBitmap and NAT Jounal</li>
-        </ul>
+      <li>mount time, will scan the on-disk NAT and NAT Journal</li>
+      <li>run time, when there is not enough free node, will scan the FreeNodeBitmap and NAT Jounal</li>
     </ul>
   </td>
 </tr>
