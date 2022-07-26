@@ -216,6 +216,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>seglist_lock, a mutex, is used to protect DirtySegBitmaps / DirtySecBitmap / VictimSecBitmap</li>
         <li>curseg_mutex, a mutex, is used to protect CurSegs[n]</li>        
       </ul>
+      <li>data flows</li>
+      <ul>
+        <li>red arrow is the data flow of checkpointing</li>
+        <li>green arrow is the data flow of SitE Cache loadinig</li>
+        <li>light blue arrow is the data flow of segment to section bitmap rollup</li>
+        <li>blue arrow is the data flow of segment allocation</li>
+        <li>orange arrow is the data flow of dirty segment update</li>
+      </ul>
       <li>DirtySegBitmaps is consist of 8 bitmaps</li>
       <ul>
         <li>the DIRTY bitmap, is the union of the following 6 sub dirty bitmaps, any 2 sub dirty bitmaps have no intersection</li>
