@@ -101,9 +101,13 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       </ul>
       <li>NID, if data size can fit in InlineDataAddrs completely, f2fs will allocate additional nodes as follow</li>
       <table>
-        <tr><td>file size<td><td>node config</td></tr>
-        <tr><td><=ISIZE</td><td>inode</td></tr>
+        <tr><td>file size</td><td>node config</td></tr>
+        <tr><td><=ISIZE</td><td>I Node</td></tr>
         <tr><td><=ISIZE+1018*4K</td><td>Direct Node</td></tr>
+        <tr><td><=ISIZE+1018*4K*2</td><td>Direct Node</td></tr>
+        <tr><td><=ISIZE+1018*1018*4K</td><td>Indirect Node+Direct Node</td></tr>
+        <tr><td><=ISIZE+1018*1018*4K*2</td><td>Indirect Node+Direct Node</td></tr>
+        <tr><td><=ISIZE+1018*1018*1018*4K</td><td>Indirect Node+Indirect Node+Direct Node</td></tr>
       </table>
     </ol>
   </td>
