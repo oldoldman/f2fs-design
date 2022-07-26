@@ -118,14 +118,14 @@
 <table>
 <tr><td>figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180910969-4ca85a4b-c413-4cbb-a189-1cbeb799a2fc.png" width="350"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/180929385-82321194-585d-451d-8129-8c8395aee4f3.png" width="350"></img></td>
   <td>
     <ol>
     <li>locks</li>
     <ul>
-      <li>build_lock , a mutex</li>
-      <li>nat_tree_lock , a r/w lock , is used to protect NatE Cache</li>
-      <li>nid_list_lock , a spin lock</li>
+      <li>build_lock, a mutex</li>
+      <li>nat_tree_lock, a r/w lock, is used to protect NatE Cache</li>
+      <li>nid_list_lock, a spin lock, is used to protect FreeNode Cache</li>
     </ul>
     <li>data flows</li>
     <ul>
