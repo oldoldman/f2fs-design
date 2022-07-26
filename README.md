@@ -23,9 +23,15 @@
     <li>NAT is basicly an array of NAT entries , indexed by Node ID</li>
     <li>NAT entry has following information</li>
     <ul>
-     <li>NAT entry version</li>
+     <li>NAT entry version , every time the node block address is changed from non-NULL_ADDR to NULL_ADDR , the version will increase by 1</li>
      <li>inode id</li>
      <li>node block address</li>
+     <ul>
+       <li>Used</li>
+       <li>NULL_ADDR</li>
+       <li>NEW_ADDR</li>
+       <li>COMPRESS_ADDR</li>
+     <ul>
     </ul>
   <ol>
   </td>
