@@ -206,6 +206,19 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>seglist_lock, a mutex, is used to protect DirtySegBitmap / DirtySecBitmap / VictimSecBitmap</li>
         <li>curseg_mutex, a mutex, is used to protect CurSegs[n]</li>        
       </ul>
+      <li>DirtySegBitmaps is consist of 8 bitmaps</li>
+      <ul>
+        <li>the DIRTY bitmap, is the sum of the following sub dirty bitmaps, any 2 sub dirty bitmaps have no intersection</li>
+        <ul>
+          <li>hot data dirty bitmap</li>
+          <li>warm data dirty bitmap</li>
+          <li>cold data dirty bitmap</li>
+          <li>hot node dirty bitmap</li>
+          <li>warm node dirty bitmap</li>
+          <li>cold node dirty bitmap</li>
+        </ul>
+        <li>the PRE bitmap, the prefreed segment has its bit set in this bitmap. Dirty segment may become free in the process of block address release or GC. These kind of segment is recorded in this PRE bitmap. At checkpoint time, the prefreed segment(s) will move to free segment(s) (PRE DirtySegBitmap->FreeSegBitmap)</li>
+      </ul>
       <li>CurSegs, an array of current segments, f2fs allocate node or data from current segment, there are 8 types of current segment</li>
       <ul>
         <li>hot data</li>
