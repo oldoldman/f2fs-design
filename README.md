@@ -55,7 +55,19 @@
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909586-427beb46-c013-4873-8c2e-557ee2d3f853.png" width="220"></img></td>
   <td>
-  
+    <ol>
+      <li>NID is the node identifier</li>
+      <li>INO inode identifier the node belong to</li>
+      <li>Flag</li>
+      <ul>
+        <li>cold flag</li>
+        <li>fsync flag</li>
+        <li>dentry flag</li>
+        <li>offset in inode</li>
+      </ul>
+      <li>CkpVer</li>
+      <li>NextBlkAddr</li>
+    </ol>
   </td>
 </tr>
 <tr valign="top">
