@@ -57,7 +57,7 @@
   <td>
     <ol>
       <li>NID is the node identifier</li>
-      <li>INO inode identifier the node belong to</li>
+      <li>INO is the inode identifier the node belong to. If NID==INO this is an inode</li>
       <li>Flag</li>
       <ul>
         <li>cold flag</li>
