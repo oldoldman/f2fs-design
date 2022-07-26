@@ -70,7 +70,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 
 ## node
 <table>
-<tr><td>figure</td><td>description</td></tr>
+<tr><td width="35%">figure</td><td>description</td></tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909586-427beb46-c013-4873-8c2e-557ee2d3f853.png" width="220"></img></td>
   <td>
