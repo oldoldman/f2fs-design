@@ -1,20 +1,29 @@
 # F2FS
-## disk layout
+## disk layout overview
 <table>
 <tr><td>figure</td><td>description</td></tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img></td>
   <td>
   1. all meta datas(super block/checkpoint/NAT/SIT/SSA) are versioned(version0 and version1)<br>
-  2. the puupose of meta data versioning is to balance the wirte of meta area<br>
-  3. version switch happened at checkpointing
+  2. the purpose of meta data versioning is to balance the wirte of meta area<br>
+  3. version switching happened at checkpointing
   </td>
 </tr>
 </table>
+
 ## check point
-|figure|description|
-|------|-----------|
-|<img src="https://user-images.githubusercontent.com/13962657/180909367-adb528c9-49a5-46bd-b245-f8c2d65636e9.png" height="350"></img>| |
+<table>
+<tr><td>figure</td><td>description</td></tr>
+<tr valign="top">
+  <td><img src="https://user-images.githubusercontent.com/13962657/180909367-adb528c9-49a5-46bd-b245-f8c2d65636e9.png" height="350"></img></td>
+  <td>
+  1. all meta datas(super block/checkpoint/NAT/SIT/SSA) are versioned(version0 and version1)<br>
+  2. the purpose of meta data versioning is to balance the wirte of meta area<br>
+  3. version switching happened at checkpointing
+  </td>
+</tr>
+</table>
 ## node
 |figure|description|
 |------|-----------|
