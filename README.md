@@ -133,6 +133,14 @@
       <li>red arrow is the data flow of checkpoiting</li>
       <li>blue arrow is the data flow of NatE Cache loading</li>
     </ul>
+    <li>FreeNode Cache building</li>
+    <ul>
+      <li>this process happened at</li>
+        <ul>
+          <li>mount time</li>
+          <li>when there is not enough free node</li>
+        </ul>
+    </ul>
   </td>
 </tr>
 </table>
