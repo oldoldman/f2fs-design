@@ -1,6 +1,5 @@
 # f2fs-design
 # disk layout
-|figure|description|
 |------|-----------|
 |<img src="https://user-images.githubusercontent.com/13962657/180906253-d999c88f-d2d3-4575-a981-09b89b752d60.png" height="350"></img>|disk layout description|
 # check point
