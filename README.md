@@ -170,6 +170,18 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>blue arrow is the data flow of NatE Cache loading</li>
     </ul>
     <li>FreeNodeBitmaps</li>
+    <li>Full/EmptyBitmap</li>
+    <ul>
+      <li>if an NAT block is empty, the bit in EmptyBitmap will be set</li>
+      <li>if an NAT block is full, the bit in FullBitmap will set set</li>
+      <li>these 2 bitmap are enabled when CP_NAT_BITS_FLAG is set and maintained in at checkpoint time</li>
+      <li>at mount time, these 2 bitmaps will be used to update FreeNodeBitmaps</li>
+    </ul>
+    <li>NATBlockBitmap</li>
+    <ul>
+      <li>set in process of scanning NAT</li>
+      <li>set according to Full/EmptyBitmap</li>
+    </ul>
     <li>FreeNode Cache building, this process happened at</li>
     <ul>
       <li>mount time, will scan the on-disk NAT and NAT Journal</li>
