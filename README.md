@@ -7,15 +7,19 @@
   <td>
   <ol>
     <li>most meta data(super block/checkpoint/NAT/SIT except SSA) are versioned(version0 and version1)</li>
-  2. the purpose of meta data versioning is to balance the wirte of meta area<br>
-  3. version switching happened at checkpointing<br>
-  4. SIT is basicly an array of SIT entries , indexed by Segment No<br>
-  4.1. SIT entry has following information<br>
-  4.1.1. allocated block count of the segment<br>
-  4.1.2. bitmap of allocated blocks<br>
-  4.1.3. segment type : hot/warm/cold<br>
-  4.1.4. the average access time of the segment , which is used in victim segment selection<br>
-  5. NAT is basicly an array of NAT entries , indexed by Node ID<br>
+    <li>the purpose of meta data versioning is to balance the wirte of meta area</li>
+    <li>version switching happened at checkpointing</li>
+    <li>SIT is basicly an array of SIT entries , indexed by Segment No</li>
+    <ol>
+      <li>SIT entry has following information</li>
+      <ul>
+          <li>allocated block count of the segment</li>
+          <li>bitmap of allocated blocks</li>
+          <li>segment type : hot/warm/cold</li>
+          <li>the average access time of the segment , which is used in victim segment selection</li>
+      <ul>
+    </ol>
+    <li>NAT is basicly an array of NAT entries , indexed by Node ID</li>
   5.1. NAT entry includes following information<br>
   5.1.1. NAT entry version<br>
   5.1.2. inode id<br>
