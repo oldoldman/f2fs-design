@@ -3,7 +3,7 @@
 <table>
 <tr><td>figure</td><td>description</td></tr>
 <tr valign="top">
-  <td wdith="20%"><img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img></td>
+  <td wdith="30%"><img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img></td>
   <td>
   <ol>
     <li>most meta data(super block/checkpoint/NAT/SIT except SSA) are versioned(version0 and version1)</li>
