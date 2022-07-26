@@ -18,6 +18,7 @@
      <li>bitmap of allocated blocks</li>
      <li>segment type : hot/warm/cold</li>
      <li>the average access time of the segment , which is used in victim segment selection</li>
+     <li>when a block is allocated or freed , the access time is calculated and averaged with the segment average access time</li>
     </ul>
     <li>NAT is basicly an array of NAT entries , indexed by Node ID</li>
     <li>NAT entry has following information</li>
