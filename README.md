@@ -97,8 +97,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <ul>
         <li>optionally, this array can be used to store extra attributes inline (ExtraAttr)</li>
         <li>optionally, can be used to store extension attributes (InlineXAttr)
-        <li>theother portion is used to store address of inline data without allocating additional node
+        <li>the other entries (InlineDataAddrs) are used to store address of inline data without allocating additional node
       </ul>
+      <li>NID, if data size can fit in InlineDataAddrs completely, f2fs will allocate additional nodes as follow</li>
+      <table>
+        <tr><td>file size<td><td>node config</td></tr>
+        <tr><td><=ISIZE</td><td>inode</td></tr>
+        <tr><td><=ISIZE+1018*4K</td><td>Direct Node</td></tr>
+      </table>
     </ol>
   </td>
 </tr>
