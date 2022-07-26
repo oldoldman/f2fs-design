@@ -27,9 +27,9 @@
      <li>inode id</li>
      <li>node block address</li>
      <ul>
-       <li>Used</li>
-       <li>NULL_ADDR</li>
-       <li>NEW_ADDR</li>
+       <li>Used , the NAT entry is allocated and node has allocated</li>
+       <li>NULL_ADDR, the NAT entry is free for allocating</li>
+       <li>NEW_ADDR, the NAT entry is allocated but node is not allocated</li>
        <li>COMPRESS_ADDR</li>
      <ul>
     </ul>
