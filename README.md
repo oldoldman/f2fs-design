@@ -101,13 +101,13 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       </ul>
       <li>NID, if file size can not fit in InlineDataAddrs completely, f2fs will allocate additional nodes as follow (ISIZE is the size that can be inlined)</li>
       <table>
-        <tr><td>file size</td><td>node config (cumulated)</td></tr>
+        <tr><td>file size</td><td>node config (cumulated)</td><td>NID Index</td></tr>
         <tr><td><=ISIZE</td><td>I Node</td></tr>
-        <tr><td><=ISIZE+1018*4K</td><td>Direct Node</td></tr>
-        <tr><td><=ISIZE+1018*4K*2</td><td>Direct Node</td></tr>
-        <tr><td><=ISIZE+1018*1018*4K</td><td>Indirect Node+Direct Node</td></tr>
-        <tr><td><=ISIZE+1018*1018*4K*2</td><td>Indirect Node+Direct Node</td></tr>
-        <tr><td><=ISIZE+1018*1018*1018*4K</td><td>Indirect Node+Indirect Node+Direct Node</td></tr>
+        <tr><td><=ISIZE+1018*4K</td><td>Direct Node</td><td>0</td></tr>
+        <tr><td><=ISIZE+1018*4K*2</td><td>Direct Node</td><td>1</td></tr>
+        <tr><td><=ISIZE+1018*1018*4K</td><td>Indirect Node+Direct Node</td><td>2</td></tr>
+        <tr><td><=ISIZE+1018*1018*4K*2</td><td>Indirect Node+Direct Node</td><td>3</td></tr>
+        <tr><td><=ISIZE+1018*1018*1018*4K</td><td>Indirect Node+Indirect Node+Direct Node</td><td>4</td></tr>
       </table>
     </ol>
   </td>
