@@ -9,8 +9,8 @@
   2. the purpose of meta data versioning is to balance the wirte of meta area<br>
   3. version switching happened at checkpointing<br>
   4. SIT is basicly an array of SIT entry , indexed by Segment No<br>
-  4.1. every SIT entry includes following information<br>
-  4.1.1. allocated blocks of the segment<br>
+  4.1. every SIT entry has following information<br>
+  4.1.1. allocated block count of the segment<br>
   4.1.2. bitmap of allocated blocks<br>
   4.1.3. segment type : hot/warm/cold<br>
   4.1.4. the average access time of the segment , which is used in victim segment selection<br>
