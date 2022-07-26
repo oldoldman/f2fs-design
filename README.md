@@ -187,7 +187,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ol>
       <li>locks</li>
       <ul>
-        <li>segmap_lock, a spin lock, is used to protect FreeSegmentBitmap/FreeSectionBitmap</li>
+        <li>segmap_lock, a spin lock, is used to protect FreeSegBitmap/FreeSecBitmap</li>
         <li>sentry_lock, a rw lock, is used to protect SitE Cache</li>
         <li>journal_rwsem, a rw lock, is used to protect NAT/SIT journal</li>
         <li>seglist_lock, a mutex, is used to protect DirtySegBitmap/DirtySecBitmap/VictimSecBitmap</li>
