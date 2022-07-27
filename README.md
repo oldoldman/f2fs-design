@@ -197,7 +197,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>updated from Full/EmptyBitmap (the blue arrow)</li>
       <li>updated at checkpoint time</li>
       <li>updated at pre-allocating time (clear)</li>
-      <li>updated in fail API call (set)</li>
+      <li>updated in fail function call (set)</li>
     </ul>
     <li>Full/EmptyBitmap</li>
     <ul>
@@ -217,7 +217,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>updated at mount time : f2fs will scan the on-disk NAT and NAT Journal</li>
       <li>updated at run time : when there is not enough free nid, will scan the FreeNIDBitmaps and NAT Jounal</li>
       <li>updated at check point time : if an NatE Cache becomes free</li>
-      <li>updated when f2fs decide that there are too many FreeNID Cache, some amount of entries will be delete, but the bits of which in FreeNIDBitmaps will keep set</li>
+      <li>updated when f2fs decide that there are too many FreeNID Cache, some amount of entries will be deleted. but the bits of which in FreeNIDBitmaps will keep set, so the deleted entries can be brought back quickly in the process of scanning FreeNIDBitmaps</li>
     </ul>
   </td>
 </tr>
