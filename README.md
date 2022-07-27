@@ -231,7 +231,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
           <li>if f2fs decide that the pre-allocation is failed, it will call the fail API, node manager will delete the FreeNID Cache entry from the tree(3) or append it back to the list (2)</li>
         </ul>
       </ol>
-      <li>so why free nid allocation is divided into 2 stages? in my understanding, it is for effeciency : usually, when a free nid has allocated, f2fs will allocate a block from segment manager for the newly allocated nid, in this 2 stages design, block allocation is decoupled from pre-allocate stage, which makes pre-allocation quickly</li>
+      <li>so why free nid allocation is divided into 2 stages? in my understanding, it is for effeciency : usually, when a free nid is allocated, f2fs will allocate a block from segment manager. in the 2 stages design, block allocation is decoupled from pre-allocate stage, which makes it more quickly</li>
     </ol>
   </td>
 </tr>
