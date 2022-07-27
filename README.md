@@ -224,13 +224,13 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td>
     <ol>
       <li>FreeNID Cache entries are organized in a balanced tree with node id as its key</li>
-      <li>at the same time, FreeNID Cache entries are linked in a list, entry is allocated from the head of the list. the allocation is divided into 2 stages</li>
+      <li>at the same time, these entries are linked into a list, entry will be allocated from the head of the list. the allocation is divided into 2 stages</li>
       <ol>
-        <li>the first stage is pre-allocation stage, FreeNID Cache entry is deleted from the list (1)</li>
+        <li>the first stage is pre-allocation stage : entry is deleted from the list (1)</li>
         <li>the second stage is succeeding/failing stage</li>
         <ul>
-          <li>if f2fs decide that the pre-allocation is succeeded, it will call the done API, node manager will delete the FreeNID Cache entry from the tree (3)</li>
-          <li>if f2fs decide that the pre-allocation is failed, it will call the fail API, node manager will delete the FreeNID Cache entry from the tree(3) or append it back to the list (2)</li>
+          <li>if f2fs decide that the pre-allocation is succeeded, it will call the done API, node manager will delete the entry from the tree (3)</li>
+          <li>if f2fs decide that the pre-allocation is failed, it will call the fail API, node manager will delete the entry from the tree(3) or append it back to the list (2)</li>
         </ul>
       </ol>
       <li>so why free nid allocation is divided into 2 stages? in my understanding, it is for effeciency : usually, when a free nid is allocated, f2fs will allocate a block from segment manager. with the 2 stage design, block allocation is decoupled from pre-allocation, which makes pre-allocation more quick</li>
