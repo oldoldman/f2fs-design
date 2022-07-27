@@ -207,8 +207,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>NATBlockBitmap</li>
     <ul>
       <li>used as a guard for updating FreeNIDBitmaps</li>
-      <li>updated in process of scanning NAT</li>
-      <li>updated from Full/EmptyBitmap</li>      
+      <li>updated in process of scanning NAT (orange arrow)</li>
+      <li>updated from Full/EmptyBitmap (orange arrow)</li>      
     </ul>
     <li>FreeNID Cache building, this process happened at</li>
     <ul>
