@@ -209,6 +209,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>NATBlockBitmap</li>
     <ul>
       <li>used as a guard for updating FreeNIDBitmaps</li>
+      <li>used as NAT scanning hint : NAT block set in this bitmap will be skipped</li>
       <li>updated in process of scanning NAT (orange arrow)</li>
       <li>updated from Full/EmptyBitmap (orange arrow)</li>      
     </ul>
