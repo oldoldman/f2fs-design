@@ -192,7 +192,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>FreeNIDBitmaps</li>
     <ul>
       <li>an array of bitmap, indexed by NAT block No</li>
-      <li>is guarded by NATBlockBitmap : to update bitmap of an NAT block, it must has its bit set in NATBlockBitmap</li>
+      <li>is guarded by NATBlockBitmap : to update bit in bitmap of an NAT block, it must has its bit set in NATBlockBitmap</li>
       <li>updated in process of NAT scanning (the light green arrow)</li>
       <li>updated from Full/EmptyBitmap (the blue arrow)</li>
       <li>updated at checkpoint time</li>
