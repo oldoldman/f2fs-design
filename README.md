@@ -214,6 +214,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>run time, when there is not enough free nid, will scan the FreeNIDBitmaps and NAT Jounal</li>
     </ul>
   </td>
+</tr>
+<tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/181168996-3e6181e4-5df9-4b5c-a8cf-bd884f84737f.png" width="350"></img></td>
   <td>
     <ol>
