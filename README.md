@@ -91,7 +91,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ol>
       <li>NID is the node identifier</li>
       <li>INO is the I Node identifier the node belong to. If NID==INO this is an I Node</li>
-      <li>Flag</li>
+      <li>Flag, is consist of the following components</li>
       <ul>
         <li>cold flag</li>
         <li>fsync flag</li>
