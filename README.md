@@ -183,17 +183,17 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     </ul>
     <li>data flows</li>
     <ul>
-      <li>green arrow is the data flow of FreeNode Cache building</li>
+      <li>green arrow is the data flow of FreeNID Cache building</li>
       <li>red arrow is the data flow of checkpoiting</li>
       <li>blue arrow is the data flow of NatE Cache loading</li>
     </ul>
-    <li>FreeNodeBitmaps</li>
+    <li>FreeNIDBitmaps</li>
     <li>Full/EmptyBitmap</li>
     <ul>
       <li>these 2 bitmaps are enabled when CP_NAT_BITS_FLAG is set and maintained at checkpoint time</li>
       <li>if an NAT block is empty, the bit in EmptyBitmap will be set</li>
       <li>if an NAT block is full, the bit in FullBitmap will set set</li>
-      <li>at mount time, these 2 bitmaps is used to update FreeNIDBitmaps and NATBlockBitmap</li>
+      <li>at mount time, these 2 bitmaps are used to update FreeNIDBitmaps and NATBlockBitmap</li>
     </ul>
     <li>NATBlockBitmap</li>
     <ul>
