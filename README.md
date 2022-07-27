@@ -229,8 +229,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>the first stage is pre-allocation stage : entry is deleted from the list (1)</li>
         <li>the second stage is succeeding/failing stage</li>
         <ul>
-          <li>if f2fs decide that the pre-allocation is succeeded, it will call the done API, node manager will delete the entry from the tree (3)</li>
-          <li>if f2fs decide that the pre-allocation is failed, it will call the fail API, node manager will delete the entry from the tree(3) or append it back to the list (2)</li>
+          <li>if f2fs decide that the pre-allocation is succeeded, it will call the done function, node manager will delete the entry from the tree (3)</li>
+          <li>if f2fs decide that the pre-allocation is failed, it will call the fail function, node manager will delete the entry from the tree(3) or append it back to the list (2)</li>
         </ul>
       </ol>
     </ol>
