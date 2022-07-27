@@ -96,8 +96,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>cold flag</li>
         <li>fsync flag</li>
         <li>dentry flag</li>
-        <li>offset in inode, I Node may (usually) have additionally nodes (Direct Node/Indirect Node), they make up a tree structure, I Node is the root. offset numbering the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on... </li>
-        <li><img src="https://user-images.githubusercontent.com/13962657/181226144-cca251b6-0530-4436-b96e-bc233b12f1ab.png" width="250"></img></li>
+        <li>offset in inode, I Node may (usually) have additionally nodes (Direct Node/Indirect Node), they make up a tree structure, I Node is the root. offset numbering the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on...<br>
+        <img src="https://user-images.githubusercontent.com/13962657/181226144-cca251b6-0530-4436-b96e-bc233b12f1ab.png" width="250"></img>
+        </li>
       </ul>
       <li>CkpVer</li>
       <li>NextBlkAddr</li>
