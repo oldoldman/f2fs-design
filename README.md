@@ -194,7 +194,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>updated in process of NAT scanning (the light green arrow)</li>
       <li>updated from Full/EmptyBitmap (the blue arrow)</li>
       <li>updated at checkpoint time</li>
-      <li>updated at allocating time (clear)</li>
+      <li>updated at pre-allocating time (clear)</li>
       <li>updated in fail API call (set)</li>
     </ul>
     <li>Full/EmptyBitmap</li>
