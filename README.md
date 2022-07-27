@@ -219,14 +219,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/181168996-3e6181e4-5df9-4b5c-a8cf-bd884f84737f.png" width="350"></img></td>
   <td>
     <ol>
-      <li>FreeNID Cache entries are organized in a balanced tree with NID as its key</li>
+      <li>FreeNID Cache entries are organized in a balanced tree with node id as its key</li>
       <li>at the same time, FreeNID Cache entries are linked in a list, free nid is allocated from the head of the list. the allocation is divided into 2 stages</li>
       <ol>
         <li>the first stage is pre-allocate stage, FreeNID Cache entry is deleted from the list (1)</li>
         <li>the second stage is succeeding/failing stage</li>
         <ul>
           <li>if f2fs decide that the pre-allocation is succeeded, it will call the done API, node manager will delete the FreeNID Cache entry from the tree (3)</li>
-          <li>if f2fs decide the pre-allocation is failed, it will call the fail API, node manager will delete the FreeNID Cache entry from the tree(3) or append it back to the list (2)</li>
+          <li>if f2fs decide that the pre-allocation is failed, it will call the fail API, node manager will delete the FreeNID Cache entry from the tree(3) or append it back to the list (2)</li>
         </ul>
       </ol>
     </ol>
