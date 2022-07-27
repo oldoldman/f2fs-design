@@ -174,7 +174,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <table>
 <tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/181166561-823cdd5c-f6e5-431a-986c-874a61fff4e5.png" width="350"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/181260293-6a143196-e9f8-44e9-bc43-7ef3ecddbe67.png" width="350"></img></td>
   <td>
     <ol>
     <li>locks</li>
@@ -201,9 +201,10 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     </ul>
     <li>Full/EmptyBitmap</li>
     <ul>
-      <li>these 2 bitmaps are enabled when CP_NAT_BITS_FLAG is set and maintained at checkpoint time</li>
+      <li>these 2 bitmaps are enabled when CP_NAT_BITS_FLAG is set</li>
       <li>if an NAT block is empty, the bit in EmptyBitmap will be set</li>
       <li>if an NAT block is full, the bit in FullBitmap will set set</li>
+      <li>updated from FreeNIDBitmaps(the purple arrow) the first time CP_NAT_BITS_FLAG is set</li>
       <li>updated at checkpoint time</li>
     </ul>
     <li>NATBlockBitmap</li>
