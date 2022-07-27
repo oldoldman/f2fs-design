@@ -172,12 +172,12 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <table>
 <tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180964099-c52958c1-6440-4bf9-8eae-6371953ea9d9.png" width="350"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/181148623-bb71e6a0-06b4-4a24-9820-f849fae332f7.png" width="350"></img></td>
   <td>
     <ol>
     <li>locks</li>
     <ul>
-      <li>nid_list_lock, a spin lock, is used to protect FreeNode Cache / FreeNodeBitmap</li>
+      <li>nid_list_lock, a spin lock, is used to protect FreeNID Cache / FreeNIDBitmaps</li>
       <li>nat_tree_lock, an rw lock, is used to protect NatE Cache</li>
       <li>build_lock, a mutex</li>      
     </ul>
@@ -200,10 +200,10 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>set in process of scanning NAT</li>
       <li>used as a guard for updating FreeNodeBitmaps</li>
     </ul>
-    <li>FreeNode Cache building, this process happened at</li>
+    <li>FreeNID Cache building, this process happened at</li>
     <ul>
       <li>mount time, will scan the on-disk NAT and NAT Journal</li>
-      <li>run time, when there is not enough free node, will scan the FreeNodeBitmap and NAT Jounal</li>
+      <li>run time, when there is not enough free nid, will scan the FreeNIDBitmaps and NAT Jounal</li>
     </ul>
   </td>
 </tr>
