@@ -194,6 +194,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>updated in process of NAT scanning (the light green arrow)</li>
       <li>updated from Full/EmptyBitmap (the blue arrow)</li>
       <li>updated at checkpoint time</li>
+      <li>updated at allocating time (clear)</li>
+      <li>updated in fail API call (set)</li>
     </ul>
     <li>Full/EmptyBitmap</li>
     <ul>
@@ -201,8 +203,6 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>if an NAT block is empty, the bit in EmptyBitmap will be set</li>
       <li>if an NAT block is full, the bit in FullBitmap will set set</li>
       <li>updated at checkpoint time</li>
-      <li>updated at allocating time</li>
-      <li>updated in fail API call</li>
     </ul>
     <li>NATBlockBitmap</li>
     <ul>
