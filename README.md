@@ -172,7 +172,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <table>
 <tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/181148623-bb71e6a0-06b4-4a24-9820-f849fae332f7.png" width="350"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/181166561-823cdd5c-f6e5-431a-986c-874a61fff4e5.png" width="350"></img></td>
   <td>
     <ol>
     <li>locks</li>
@@ -185,12 +185,15 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ul>
       <li>green arrow is the data flow of FreeNID Cache building</li>
       <li>red arrow is the data flow of checkpoiting</li>
-      <li>blue arrow is the data flow of NatE Cache loading</li>
+      <li>light blue arrow is the data flow of NatE Cache loading</li>
     </ul>
     <li>FreeNIDBitmaps</li>
     <ul>
       <li>an array of bitmap, indexed by NAT block No</li>
       <li>is guarded by NATBlockBitmap. to update bitmap of an NAT block, it must has its bit set in NATBlockBitmap</li>
+      <li>updated in process of NAT scanning (the light green arrow)</li>
+      <li>updated from Full/EmptyBitmap (the blue arrow)</li>
+      <li>updated at checkpoint time</li>
     </ul>
     <li>Full/EmptyBitmap</li>
     <ul>
