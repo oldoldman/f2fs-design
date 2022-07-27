@@ -200,12 +200,13 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>these 2 bitmaps are enabled when CP_NAT_BITS_FLAG is set and maintained at checkpoint time</li>
       <li>if an NAT block is empty, the bit in EmptyBitmap will be set</li>
       <li>if an NAT block is full, the bit in FullBitmap will set set</li>
-      <li>at mount time, these 2 bitmaps are used to update FreeNIDBitmaps and NATBlockBitmap</li>
+      <li>updated at checkpoint time</li>
     </ul>
     <li>NATBlockBitmap</li>
     <ul>
-      <li>set in process of scanning NAT</li>
       <li>used as a guard for updating FreeNIDBitmaps</li>
+      <li>updated in process of scanning NAT</li>
+      <li>updated from Full/EmptyBitmap</li>      
     </ul>
     <li>FreeNID Cache building, this process happened at</li>
     <ul>
