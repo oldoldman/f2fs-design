@@ -191,7 +191,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     </ul>
     <li>FreeNIDBitmaps, an array of bitmap, indexed by NAT block No, each bitmap is indexed by offset of nid in NAT block</li>
     <ul>
-      <li>is guarded by NATBlockBitmap : to update bit in bitmap of an NAT block, it must has its bit set in NATBlockBitmap</li>
+      <li>is guarded by NATBlockBitmap : to update bit in bitmap of an NAT block, bit of which in NATBlockBitmap must be set</li>
       <li>updated in NAT scanning (the light green arrow)</li>
       <li>updated from NATBits (the blue arrow)</li>
       <li>updated at checking point time</li>
