@@ -189,13 +189,12 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>red arrow is the data flow of checkpoiting</li>
       <li>light blue arrow is the data flow of NatE Cache loading</li>
     </ul>
-    <li>FreeNIDBitmaps</li>
+    <li>FreeNIDBitmaps, an array of bitmap, indexed by NAT block No, each bitmap is indexed by offset of nid in NAT block</li>
     <ul>
-      <li>an array of bitmap, indexed by NAT block No</li>
       <li>is guarded by NATBlockBitmap : to update bit in bitmap of an NAT block, it must has its bit set in NATBlockBitmap</li>
       <li>updated in process of NAT scanning (the light green arrow)</li>
-      <li>updated from Full/EmptyBitmap (the blue arrow)</li>
-      <li>updated at checkpoint time</li>
+      <li>updated from NATBits (the blue arrow)</li>
+      <li>updated at checking point time</li>
       <li>updated at pre-allocation time (clear)</li>
       <li>updated in fail function call (set)</li>
       <li>used at run time FreeNID Cache building</li>
@@ -205,11 +204,11 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>is enabled when CP_NAT_BITS_FLAG is set</li>
       <li>if an NAT block is empty (all NAT entries are free, NULL_ADDR), the bit in EmptyBitmap will be set</li>
       <li>if an NAT block is full (all NAT entries are used, non-NULL_ADDR), the bit in FullBitmap will be set</li>
-      <li>so an dirty NAT block will has its bit set neither in EmptyBitmap nor in FullBitmap</li>
-      <li>updated from FreeNIDBitmaps(the purple arrow) the first time NATBits is enabled</li>
-      <li>updated at checkpoint time</li>
+      <li>a dirty NAT block will has its bit set neither in EmptyBitmap nor in FullBitmap</li>
+      <li>updated from FreeNIDBitmaps (the purple arrow) the first time NATBits is enabled</li>
+      <li>updated at checking point time</li>
     </ul>
-    <li>NATBlockBitmap</li>
+    <li>NATBlockBitmap, indexed by NAT block No</li>
     <ul>
       <li>used as a guard for updating FreeNIDBitmaps</li>
       <li>used as NAT scanning hint : NAT block set in this bitmap will be skipped</li>
@@ -218,16 +217,16 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     </ul>
     <li>FreeNID Cache</li>
     <ul>
-      <li>updated at mount time : f2fs will scan the on-disk NAT and NAT Journal</li>
-      <li>updated at run time : when there is not enough free nid, will scan the FreeNIDBitmaps, NAT Jounal and NAT</li>
-      <li>updated at check point time : if an NatE Cache entry becomes free</li>
+      <li>updated at mount time : f2fs will scan the NAT and NAT Journal</li>
+      <li>updated at run time : when there is not enough free nid, f2fs will scan the FreeNIDBitmaps, NAT Jounal and NAT</li>
+      <li>updated at checking point time : if an NatE Cache entry becomes free</li>
       <li>updated when f2fs decide that there are too many FreeNID Cache, portion of the entries will be deleted, but the bits of which in FreeNIDBitmaps will keep set, in case of there is not enough FreeNID Cache, the deleted entries can be brought back quickly by scanning FreeNIDBitmaps</li>
     </ul>
     <li>NatE Cache</li>
     <ul>
       <li>NatE Cache is loaded on-demand</li>
       <li>an entry in NatE Cache fall into 2 categories : its nid has been scanned or not</li>
-      <li>an entry become dirty when its address changed</li>
+      <li>an entry becomes dirty when its address changed</li>
     </ul>
   </td>
 </tr>
@@ -260,8 +259,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>locks</li>
       <ul>
         <li>segmap_lock, a spin lock, is used to protect FreeSegBitmap / FreeSecBitmap</li>
-        <li>sentry_lock, a rw lock, is used to protect SitE Cache</li>
-        <li>journal_rwsem, a rw lock, is used to protect NAT/SIT journal in CurSegs[n]</li>
+        <li>sentry_lock, an rw lock, is used to protect SitE Cache</li>
+        <li>journal_rwsem, an rw lock, is used to protect NAT/SIT journal in CurSegs[n]</li>
         <li>seglist_lock, a mutex, is used to protect DirtySegBitmaps / DirtySecBitmap / VictimSecBitmap</li>
         <li>curseg_mutex, a mutex, is used to protect CurSegs[n]</li>        
       </ul>
@@ -273,9 +272,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>blue arrow is the data flow of segment switching</li>
         <li>orange arrow is the data flow of dirty segment update</li>
       </ul>
-      <li>DirtySegBitmaps is consist of 8 bitmaps</li>
+      <li>DirtySegBitmaps is consist of 8 bitmaps, all are indexed by segment No</li>
       <ul>
-        <li>the DIRTY bitmap, is the union of the following 6 sub dirty bitmaps, any 2 sub dirty bitmaps have no intersection</li>
+        <li>the DIRTY bitmap, is the union of the following 6 sub-DIRTY bitmaps, any 2 sub-DIRTY bitmaps have no intersection</li>
         <ul>
           <li>hot data dirty bitmap</li>
           <li>warm data dirty bitmap</li>
@@ -284,9 +283,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
           <li>warm node dirty bitmap</li>
           <li>cold node dirty bitmap</li>
         </ul>
-        <li>the PRE bitmap, the prefreed segment has its bit set in this bitmap. Dirty segment may become free in the process of block address release or GC. These kind of segment is recorded in this PRE bitmap. At checkpoint time, the prefreed segment(s) will move to free segment(s) (PRE DirtySegBitmap->FreeSegBitmap)</li>
+        <li>the PRE bitmap, the prefreed segment has its bit set in this bitmap. dirty segment may become free in the process of block address release or GC. these kind of segment is recorded in this PRE bitmap. at checking point time, the prefreed segment(s) is moved to free segment(s) (PRE DirtySegBitmap->FreeSegBitmap)</li>
       </ul>
-      <li>CurSegs, an array of current segments, f2fs allocate node or data from current segment, there are 8 types of current segment</li>
+      <li>CurSegs, an array of current segments, f2fs allocate node or data from current segments, there are 8 types of current segment</li>
       <ul>
         <li>hot data</li>
         <li>warm data</li>
