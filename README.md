@@ -166,7 +166,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td>
     <ol>
       <li>NID</li>
-      <li>Version : copy of NAT entry version</li>
+      <li>Version : copy of NAT entry Version</li>
       <li>Offset</li>
     </ol>
   </td>
