@@ -174,7 +174,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <table>
 <tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/181260293-6a143196-e9f8-44e9-bc43-7ef3ecddbe67.png" width="350"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/181395099-727d3051-ccb6-4e4c-93c8-0feedb717b35.png" width="350"></img></td>
   <td>
     <ol>
     <li>locks</li>
@@ -200,12 +200,13 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>updated in fail function call (set)</li>
       <li>used at run time FreeNID Cache building</li>
     </ul>
-    <li>Full/EmptyBitmap</li>
+    <li>NATBits, is consist of 2 bitmap : FullBitamp and EmptyBitmap, both indexed by NAT block No</li>
     <ul>
-      <li>these 2 bitmaps are enabled when CP_NAT_BITS_FLAG is set</li>
-      <li>if an NAT block is empty, the bit in EmptyBitmap will be set</li>
-      <li>if an NAT block is full, the bit in FullBitmap will set set</li>
-      <li>updated from FreeNIDBitmaps(the purple arrow) the first time CP_NAT_BITS_FLAG is set</li>
+      <li>is enabled when CP_NAT_BITS_FLAG is set</li>
+      <li>if an NAT block is empty (all NAT entries are free, NULL_ADDR), the bit in EmptyBitmap will be set</li>
+      <li>if an NAT block is full (all NAT entries are used, non-NULL_ADDR), the bit in FullBitmap will set set</li>
+      <li>so an dirty NAT block will has its bit set neither in EmptyBitmap nor in FullBitmap</li>
+      <li>updated from FreeNIDBitmaps(the purple arrow) the first time NATBits is enabled</li>
       <li>updated at checkpoint time</li>
     </ul>
     <li>NATBlockBitmap</li>
@@ -213,7 +214,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>used as a guard for updating FreeNIDBitmaps</li>
       <li>used as NAT scanning hint : NAT block set in this bitmap will be skipped</li>
       <li>updated in process of scanning NAT (orange arrow)</li>
-      <li>updated from Full/EmptyBitmap (orange arrow)</li>      
+      <li>updated from NATBits (orange arrow)</li>      
     </ul>
     <li>FreeNID Cache</li>
     <ul>
