@@ -225,7 +225,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>NatE Cache</li>
     <ul>
       <li>NatE Cache is loaded on-demand</li>
-      <li>an entry in NatE Cache fall into 2 categories : its nid is has been scanned or not</li>
+      <li>an entry in NatE Cache fall into 2 categories : its nid has been scanned or not</li>
       <li>an entry become dirty when its address changed</li>
     </ul>
   </td>
