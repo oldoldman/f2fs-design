@@ -200,11 +200,11 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>updated in fail function call (set)</li>
       <li>used at run time FreeNID Cache building</li>
     </ul>
-    <li>NATBits, is consist of 2 bitmap : FullBitmap and EmptyBitmap, both indexed by NAT block No</li>
+    <li>NATBits, is consist of 2 bitmaps : FullBitmap and EmptyBitmap, both indexed by NAT block No</li>
     <ul>
       <li>is enabled when CP_NAT_BITS_FLAG is set</li>
       <li>if an NAT block is empty (all NAT entries are free, NULL_ADDR), the bit in EmptyBitmap will be set</li>
-      <li>if an NAT block is full (all NAT entries are used, non-NULL_ADDR), the bit in FullBitmap will set set</li>
+      <li>if an NAT block is full (all NAT entries are used, non-NULL_ADDR), the bit in FullBitmap will be set</li>
       <li>so an dirty NAT block will has its bit set neither in EmptyBitmap nor in FullBitmap</li>
       <li>updated from FreeNIDBitmaps(the purple arrow) the first time NATBits is enabled</li>
       <li>updated at checkpoint time</li>
