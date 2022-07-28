@@ -164,7 +164,11 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="220"></img></td>
   <td>
-  
+    <ol>
+      <li>NID</li>
+      <li>Version : copy of NAT entry version</li>
+      <li>Offset</li>
+    </ol>
   </td>
 </tr>
 </table>
