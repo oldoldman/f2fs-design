@@ -192,12 +192,12 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>FreeNIDBitmaps, an array of bitmap, indexed by NAT block No, each bitmap is indexed by offset of nid in NAT block</li>
     <ul>
       <li>is guarded by NATBlockBitmap : to update bit in bitmap of an NAT block, it must has its bit set in NATBlockBitmap</li>
-      <li>updated in process of NAT scanning (the light green arrow)</li>
+      <li>updated in NAT scanning (the light green arrow)</li>
       <li>updated from NATBits (the blue arrow)</li>
       <li>updated at checking point time</li>
       <li>updated at pre-allocation time (clear)</li>
       <li>updated in fail function call (set)</li>
-      <li>used at run time FreeNID Cache building</li>
+      <li>used in run time FreeNID Cache building</li>
     </ul>
     <li>NATBits, is consist of 2 bitmaps : FullBitmap and EmptyBitmap, both indexed by NAT block No</li>
     <ul>
