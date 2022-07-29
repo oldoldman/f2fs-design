@@ -97,7 +97,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>cold flag</li>
         <li>fsync flag</li>
         <li>dentry flag</li>
-        <li>offset, refer to offsets</li>
+        <li>offset, refer to <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-config">node config</a></li>
       </ul>
       <li>CkpVer</li>
       <li>NextBlkAddr</li>
