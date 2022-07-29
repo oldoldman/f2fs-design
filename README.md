@@ -97,9 +97,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>cold flag</li>
         <li>fsync flag</li>
         <li>dentry flag</li>
-        <li>offset in inode, I Node may (usually) have additionally nodes (Direct Node/Indirect Node), they make up a tree structure, I Node is the root. offset numbering the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on...<br>
-        <img src="https://user-images.githubusercontent.com/13962657/181226854-a7358bba-d6f8-42e2-8162-ce4f99f44d1c.png" width="250"></img>
-        </li>
+        <li>offset, refer to offsets</li>
       </ul>
       <li>CkpVer</li>
       <li>NextBlkAddr</li>
@@ -154,9 +152,10 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/181226854-a7358bba-d6f8-42e2-8162-ce4f99f44d1c.png" width="300"></img></td>
   <td>
     <ol>
-      <li>node offset in file, I Node may (usually) have additionally nodes (Direct Node/Indirect Node), they make up a tree structure, I Node is the root. offset numbering the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on...
+      <li>there are 2 kind of offsets in a file : node offset and data offset</li>
+      <li>node offset, a file may (usually) have additionally nodes (Direct Node/Indirect Node), they make up a tree structure, I Node is the root. offset numbering the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on...
       </li>
-      <li>data offset in file</li>
+      <li>data offset</li>
     </ol>
   </td>
 </tr>
