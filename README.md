@@ -140,10 +140,10 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <table>
 <tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/181226854-a7358bba-d6f8-42e2-8162-ce4f99f44d1c.png" width="350"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/181226854-a7358bba-d6f8-42e2-8162-ce4f99f44d1c.png" width="400"></img></td>
   <td>
     <ol>
-      <li>f2fs use 5 configurations to accommodate different file sizes, this makes up tree</li>
+      <li>f2fs use 5 configurations to accommodate different file sizes, this makes up a tree structure</li>
       <ul>
       	<li>blue circle is I Node (file)</li>
       	<li>light green circle is Direct Node</li>
