@@ -199,6 +199,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>offset in Direct Node if this is a data block</li>
         <li>0 if this is a node block</li>
       </ul>
+      <li>Type: data or node. f2fs will not allocate data and node mixed from the same segment </li>
     </ol>
   </td>
 </tr>
