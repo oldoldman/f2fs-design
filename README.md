@@ -29,7 +29,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <table>
 <tr><td width="25%">figure</td><td>description</td></tr>
 <tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180909202-51e07d8a-cc8c-46e6-ba44-86ab55996301.png" height="350"></img></td>
+  <td><img src="https://user-images.githubusercontent.com/13962657/181773789-6b09d493-79ac-4777-81f6-9838eab1e44e.png" height="350"></img></td>
   <td>
   <ol>
     <li>most of the frequently accessed meta data(super block/checkpoint/NAT/SIT except SSA) are versioned(version0 and version1)</li>
