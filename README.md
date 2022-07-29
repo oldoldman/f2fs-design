@@ -9,6 +9,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#checkpoint">checkpoint</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node">node</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#natsitssa">nat/sit/ssa</a></li>
+    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#offsets">offsets</a></li>
   </ol>
   <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#linux-implementation">Linux Implementation</a></li>
   <ol>
@@ -141,6 +142,20 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td>
     <ol>
         <li>an indirect node has 1018 nid entries, it will cover 1018 direct nodes or 1018 indirect nodes. in the former an indirect node will cover 1018*1018*4K bytes of data, in the latter, an indirect node will cover 1018*1018*1018*4K bytes of data
+    </ol>
+  </td>
+</tr>
+</table>
+
+## offsets
+<table>
+<tr><td width="35%">figure</td><td>description</td></tr>
+<tr valign="top">
+  <td><img src="https://user-images.githubusercontent.com/13962657/181226854-a7358bba-d6f8-42e2-8162-ce4f99f44d1c.png" width="220"></img></td>
+  <td>
+    <ol>
+      <li>offset in inode, I Node may (usually) have additionally nodes (Direct Node/Indirect Node), they make up a tree structure, I Node is the root. offset numbering the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on...
+      </li>
     </ol>
   </td>
 </tr>
