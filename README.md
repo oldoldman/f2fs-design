@@ -146,8 +146,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>f2fs use 5 configurations to accommodate different file sizes, this makes up a tree structure</li>
       <ul>
       	<li>blue circle is I Node (file)</li>
-      	<li>light green circle is Direct Node</li>
-      	<li>green circle is Indirect Node</li>
+      	<li>light green circle is Indirect Node</li>
+      	<li>green circle is Direct Node</li>
       </ul>
       <li>file size and configuration(ISIZE is the size that can be inlined)</li>
       <table>
