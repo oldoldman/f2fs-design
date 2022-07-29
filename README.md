@@ -9,7 +9,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#checkpoint">checkpoint</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node">node</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#natsitssa">nat/sit/ssa</a></li>
-    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#offsets">offsets</a></li>
+    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-config">node config, file size, etc.</a></li>
   </ol>
   <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#linux-implementation">Linux Implementation</a></li>
   <ol>
@@ -114,16 +114,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>optionally, this array can also be used to store extension attributes inline (InlineXAttr)
         <li>the other entries (InlineDataAddrs) are used to store address of inlined file data
       </ul>
-      <li>NID, if file size can not fit in InlineDataAddrs completely, f2fs will allocate additional nodes as follow (ISIZE is the size that can be inlined)</li>
-      <table>
-        <tr><td>file size</td><td>node config (cumulated)</td><td>NID Index</td></tr>
-        <tr><td><=ISIZE</td><td>I Node</td></tr>
-        <tr><td><=ISIZE+1018*4K</td><td>Direct Node</td><td>0</td></tr>
-        <tr><td><=ISIZE+1018*4K*2</td><td>Direct Node</td><td>1</td></tr>
-        <tr><td><=ISIZE+1018*1018*4K</td><td>Indirect Node+Direct Node</td><td>2</td></tr>
-        <tr><td><=ISIZE+1018*1018*4K*2</td><td>Indirect Node+Direct Node</td><td>3</td></tr>
-        <tr><td><=ISIZE+1018*1018*1018*4K</td><td>Indirect Node+Indirect Node+Direct Node</td><td>4</td></tr>
-      </table>
+      <li>NID, if file size can not fit in InlineDataAddrs completely, f2fs will allocate additional nodes, refer to node config</li>
     </ol>
   </td>
 </tr>
@@ -145,17 +136,34 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 </tr>
 </table>
 
-## offsets
+## node config
 <table>
 <tr><td width="35%">figure</td><td>description</td></tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/181226854-a7358bba-d6f8-42e2-8162-ce4f99f44d1c.png" width="300"></img></td>
   <td>
     <ol>
+      <li>f2fs use 5 configurations to accommodate different file sizes, this makes up tree</li>
+      <ul>
+      	<li>blue circle is I Node (file)</li>
+      	<li>light green circle is Direct Node</li>
+      	<li>green circle is Indirect Node</li>
+      </ul>
+      <li>file size and configuration(ISIZE is the size that can be inlined)</li>
+      <table>
+        <tr><td>file size</td><td>node config (cumulated)</td><td>NID Index</td></tr>
+        <tr><td><=ISIZE</td><td>I Node</td></tr>
+        <tr><td><=ISIZE+1018*4K</td><td>Direct Node</td><td>0</td></tr>
+        <tr><td><=ISIZE+1018*4K*2</td><td>Direct Node</td><td>1</td></tr>
+        <tr><td><=ISIZE+1018*1018*4K</td><td>Indirect Node+Direct Node</td><td>2</td></tr>
+        <tr><td><=ISIZE+1018*1018*4K*2</td><td>Indirect Node+Direct Node</td><td>3</td></tr>
+        <tr><td><=ISIZE+1018*1018*1018*4K</td><td>Indirect Node+Indirect Node+Direct Node</td><td>4</td></tr>
+      </table>
       <li>there are 2 kind of offsets in a file : node offset and data offset</li>
-      <li>node offset, a file may (usually) have additionally nodes (Direct Node/Indirect Node), they make up a tree structure, I Node is the root. offset numbering the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on...
-      </li>
-      <li>data offset</li>
+      <ul>
+      	<li>node offset, is the numbering of the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on...</li>
+      	<li>data offset</li>
+      </ul>
     </ol>
   </td>
 </tr>
