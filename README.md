@@ -335,9 +335,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>hot data</li>
         <li>warm data</li>
         <li>cold data</li>
-        <li>hot node</li>
+        <li>hot node, from which Direct Node is allocated</li>
         <li>warm node</li>
-        <li>cold node</li>
+        <li>cold node, from which Indriect Node is allocated</li>
         <li>pinned cold data</li>
         <li>atgc</li>
       </ul>
