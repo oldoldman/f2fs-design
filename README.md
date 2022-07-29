@@ -188,18 +188,24 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="220"></img></td>
   <td>
     <ol>
-      <li>NID</li>
-      <li>Version</li>
+      <li>SSA entry is the summary of block in segment, each block has 1 entry</li>
       <ul>
-        <li>copy of Direct Node's NAT entry version if this is a data block</li>
-        <li>0 if this is a node block</li>
+        <li>NID</li>
+        <li>Version</li>
+        <ul>
+          <li>copy of Direct Node's NAT entry version if this is a data block</li>
+          <li>0 if this is a node block</li>
+        </ul>
+        <li>Offset</li>
+        <ul>
+          <li>offset in Direct Node if this is a data block</li>
+          <li>0 if this is a node block</li>
+        </ul>
       </ul>
-      <li>Offset</li>
+      <li>Footer</li>
       <ul>
-        <li>offset in Direct Node if this is a data block</li>
-        <li>0 if this is a node block</li>
+        <li>Type: data or node. f2fs will not allocate data and node mixed from the same segment </li>
       </ul>
-      <li>Type: data or node. f2fs will not allocate data and node mixed from the same segment </li>
     </ol>
   </td>
 </tr>
