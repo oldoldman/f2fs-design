@@ -193,7 +193,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>NID</li>
         <li>Version</li>
         <ul>
-          <li>copy of Direct Node's NAT entry version if this is a data block</li>
+          <li>copy of NAT entry version of Direct Node if this is a data block</li>
           <li>0 if this is a node block</li>
         </ul>
         <li>Offset</li>
@@ -204,7 +204,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       </ul>
       <li>Footer</li>
       <ul>
-        <li>Type: data or node. f2fs will not allocate data and node mixed from the same segment </li>
+        <li>Type: data or node. f2fs does not mix data block and node block in the same segment </li>
       </ul>
     </ol>
   </td>
