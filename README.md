@@ -112,9 +112,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <ul>
         <li>optionally, this array can be used to store extra attributes inline (ExtraAttr)</li>
         <li>optionally, this array can also be used to store extension attributes inline (InlineXAttr)
-        <li>the other entries (InlineDataAddrs) are used to store address of inlined file data
+        <li>the other entries (InlineDataAddrs) are used to store addresses of inlined file data
       </ul>
-      <li>NID, if file size can not fit in InlineDataAddrs completely, f2fs will allocate additional nodes, refer to node config</li>
+      <li>NID, if file size can not fit in InlineDataAddrs completely, f2fs will allocate additional nodes, refer to <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-config">node config</a></li>
     </ol>
   </td>
 </tr>
