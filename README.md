@@ -138,7 +138,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 
 ## node config
 <table>
-<tr><td width="35%">figure</td><td>description</td></tr>
+<tr><td width="40%">figure</td><td>description</td></tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/181226854-a7358bba-d6f8-42e2-8162-ce4f99f44d1c.png" width="350"></img></td>
   <td>
