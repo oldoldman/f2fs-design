@@ -189,8 +189,16 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td>
     <ol>
       <li>NID</li>
-      <li>Version : copy of NAT entry Version</li>
+      <li>Version</li>
+      <ul>
+        <li>copy of Direct Node's NAT entry version if this is a data block</li>
+        <li>0 if this is a node block</li>
+      </ul>
       <li>Offset</li>
+      <ul>
+        <li>offset in Direct Node if this is a data block</li>
+        <li>0 if this is a node block</li>
+      </ul>
     </ol>
   </td>
 </tr>
