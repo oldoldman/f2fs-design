@@ -237,7 +237,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       	<li>light green circle is Indirect Node</li>
       	<li>green circle is Direct Node</li>
       </ul>
-      <li>file size and configuration(Isz is the size that can be inlined, N==1018, I: Indriect Node, D: Direct Node)</li>
+      <li>file size and configuration(Isz is the size that can be inlined, N==1018, I: Indirect Node, D: Direct Node)</li>
       <table>
         <tr><td>file size</td><td>node config (cumulative)</td><td>NID Index</td></tr>
         <tr><td><=Isz</td><td>I Node</td><td>-</td></tr>
