@@ -78,7 +78,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 
 ## checkpoint
 <table>
-<tr><td>figure</td><td>description</td></tr>
+<tr><td wdith="40%">figure</td><td>description</td></tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909367-adb528c9-49a5-46bd-b245-f8c2d65636e9.png" height="350"></img></td>
   <td>
