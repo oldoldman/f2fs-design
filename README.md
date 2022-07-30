@@ -149,15 +149,15 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       	<li>light green circle is Indirect Node</li>
       	<li>green circle is Direct Node</li>
       </ul>
-      <li>file size and configuration(ISIZE is the size that can be inlined)</li>
+      <li>file size and configuration(I is the size that can be inlined, N==1018)</li>
       <table>
         <tr><td>portion of size</td><td>node config (cumulated)</td><td>NID Index</td></tr>
-        <tr><td><=ISIZE</td><td>I Node</td><td>-</td></tr>
-        <tr><td><=ISIZE+1018*4K</td><td>Direct Node</td><td>0</td></tr>
-        <tr><td><=ISIZE+1018*4K*2</td><td>Direct Node</td><td>1</td></tr>
-        <tr><td><=ISIZE+1018*1018*4K</td><td>Indirect Node+Direct Node</td><td>2</td></tr>
-        <tr><td><=ISIZE+1018*1018*4K*2</td><td>Indirect Node+Direct Node</td><td>3</td></tr>
-        <tr><td><=ISIZE+1018*1018*1018*4K</td><td>Indirect Node+Indirect Node+Direct Node</td><td>4</td></tr>
+        <tr><td><=I</td><td>I Node</td><td>-</td></tr>
+        <tr><td><=I+N*4K</td><td>Direct Node</td><td>0</td></tr>
+        <tr><td><=I+N*4K*2</td><td>Direct Node</td><td>1</td></tr>
+        <tr><td><=I+N*N*4K</td><td>Indirect Node+Direct Node</td><td>2</td></tr>
+        <tr><td><=I+N*N*4K*2</td><td>Indirect Node+Direct Node</td><td>3</td></tr>
+        <tr><td><=I+N*N*N*4K</td><td>Indirect Node+Indirect Node+Direct Node</td><td>4</td></tr>
       </table>
       <li>there are 2 kind of offsets in a file : node offset and data offset</li>
       <ul>
