@@ -7,7 +7,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <ol>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#disk-layout">disk layout</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#checkpoint">checkpoint</a></li>
-    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#natsitssa">nat/sit/ssa</a></li>
+    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#natsitssa">NAT/SIT/SSA</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node">node</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-config">node config, file size, etc.</a></li>
   </ol>
