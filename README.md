@@ -178,9 +178,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>BlkAddr</li>
       <ul>
         <li>NULL_ADDR, the NAT entry is free for allocating</li>
-        <li>NEW_ADDR, the NAT entry is allocated but node is not allocated</li>
-        <li>Used, the NAT entry is allocated and node is allocated</li>
+        <li>NEW_ADDR, the NAT entry is allocated but node is not allocated</li>        
         <li>COMPRESS_ADDR</li>
+        <li>Used (none of the above), the NAT entry is allocated and node is allocated, BlkAddr is the address of the node</li>
       </ul>
     </ol>
   </td>
