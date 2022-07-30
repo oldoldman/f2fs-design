@@ -39,11 +39,11 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>SIT, segment information table</li>
       <li>NAT, node address table</li>
       <li>SSA, segment summary area</li>
-      <li>frequently accessed meta datas(Super Block / Checkpoint / SIT / NAT, except SSA) are versioned(there are 2 versions)</li>
-      <ul>
-        <li>the purpose of meta data versioning is to balance the wirte of meta area</li>
-        <li>version switching happened at checking point time</li>
-      </ul>
+    </ul>
+    <li>frequently accessed meta datas(Super Block / Checkpoint / SIT / NAT, except SSA) are versioned(there are 2 versions)</li>
+    <ul>
+      <li>the purpose of meta data versioning is to balance the wirte of meta area</li>
+      <li>version switching happened at checking point time</li>
     </ul>
     <li>Super Block, has following important information</li>
     <ul>
