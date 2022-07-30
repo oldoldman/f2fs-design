@@ -39,7 +39,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>SIT, segment information table</li>
       <li>NAT, node address table</li>
       <li>SSA, segment summary area</li>
-      <li>most of the frequently accessed meta datas(except SSA) are versioned(there are 2 versions)</li>
+      <li>frequently accessed meta datas(Super Block / Checkpoint / SIT / NAT, except SSA) are versioned(there are 2 versions)</li>
       <ul>
         <li>the purpose of meta data versioning is to balance the wirte of meta area</li>
         <li>version switching happened at checking point time</li>
@@ -82,7 +82,18 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180909367-adb528c9-49a5-46bd-b245-f8c2d65636e9.png" height="350"></img></td>
   <td>
-  
+    <ol>
+      <li>Header and Footer, they are indentical if this is a valid checkpoint, have following information</li>
+      <ul>
+        <li>size (in unit of 4K) of checkpoint : from Header to Footer</li>
+        <li>NAT version bitmap</li>
+        <li>SIT version bitmap</li>
+      </ul>
+      <li>Payload, if Header can not accommodate the SIT version bitmap, it will be stored in Payload, or else this area is empty</li>
+      <li>Orphan inode, if any, or else this area is empty</li>
+      <li>Summary</li>
+      <li>NATBits, if enabled, or else this area is empty</li>
+    </ol>
   </td>
 </tr>
 </table>
