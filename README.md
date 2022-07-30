@@ -182,10 +182,10 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>INO is the I Node identifier the node belong to. If NID==INO this is an I Node</li>
       <li>Flag, is consist of the following components</li>
       <ul>
-        <li>cold flag</li>
-        <li>fsync flag</li>
-        <li>dentry flag</li>
-        <li>offset, refer to <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-config">node config</a></li>
+        <li>bit 0 : cold flag</li>
+        <li>bit 1 : fsync flag</li>
+        <li>bit 2 : dentry flag</li>
+        <li>bit 3-31 : offset, refer to <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-config">node config</a> for detail</li>
       </ul>
       <li>CkpVer</li>
       <li>NextBlkAddr</li>
