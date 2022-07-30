@@ -45,6 +45,13 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <li>version switching happened at checking point time</li>
       </ul>
     </ul>
+    <li>Super Block, has following important information</li>
+    <ul>
+      <li>magic number, is used to recognize f2fs volume</li>
+      <li>major and minor version of f2fs</li>
+      <li>sector size, block size</li>
+      <li>sectos per block, blocks per segment (512), segments per section (usually 1, settable by mkfs.f2fs), sections per zone (usually 1)</li>
+    </ul>
     <li>SIT is basicly an array of SIT entries , indexed by Segment No</li>
     <li>SIT entry has following information</li>
     <ul>
