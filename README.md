@@ -7,9 +7,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <ol>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#disk-layout">disk layout</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#checkpoint">checkpoint</a></li>
+    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#natsitssa">nat/sit/ssa</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node">node</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-config">node config, file size, etc.</a></li>
-    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#natsitssa">nat/sit/ssa</a></li>
   </ol>
   <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#linux-implementation">Linux Implementation</a></li>
   <ol>
@@ -105,6 +105,72 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 </tr>
 </table>
 
+## nat/sit/ssa
+<table>
+<tr><td>figure</td><td>description</td></tr>
+<tr valign="top">
+  <td><img src="https://user-images.githubusercontent.com/13962657/180914285-503a452c-2aed-44b9-baa5-67b1f5b7f319.png" width="240"></img></td>
+  <td>
+    <ol>
+      <li>NAT is organized in 4K sized blocks, an NAT block accommodates N==455 NAT entries</li>
+      <li>Version, every time the BlkAddr is changed from non-NULL_ADDR to NULL_ADDR , Version will increase by 1</li>
+      <li>INO</li>
+      <li>BlkAddr</li>
+      <ul>
+        <li>NULL_ADDR, the NAT entry is free for allocating</li>
+        <li>NEW_ADDR, the NAT entry is allocated but node is not allocated</li>        
+        <li>COMPRESS_ADDR</li>
+        <li>Used (none of the above), the NAT entry is allocated and node is allocated, BlkAddr is the address of the node</li>
+      </ul>
+    </ol>
+  </td>
+</tr>
+<tr valign="top">
+  <td><img src="https://user-images.githubusercontent.com/13962657/180914330-e21e72c3-1f55-4f6e-b4c1-70768703738d.png" width="240"></img></td>
+  <td>
+    <ol>
+      <li>SIT is organized in 4K sized blocks, a SIT block accommodates N==55 SIT entries</li>
+      <li>Blocks, is consist of the following components</li>
+      <ul>
+        <li>bits 0-9, is the allocated block count in the segment</li>
+        <li>bits 10-15, is the segment temperature : hot/warm/cold</li>
+      </ul>
+      <li>BlockBitmap, every allocated block in this segment has its bit set in this bitmap</li>
+      <li>Mtime, average access time of the segment</li>
+      <ul>
+        <li>when a block in this segment is allocated or freed, the access time is calculated and averaged with Mtime</li>
+        <li>is used in victim segment selection</li>
+      </ul>
+    </ol>
+  </td>
+</tr>
+<tr valign="top">
+  <td><img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="240"></img></td>
+  <td>
+    <ol>
+      <li>SSA entry is the summary of block in segment, each block has 1 entry</li>
+      <ul>
+        <li>NID</li>
+        <li>Version</li>
+        <ul>
+          <li>copy of NAT entry version of Direct Node if this is a data block</li>
+          <li>0 if this is a node block</li>
+        </ul>
+        <li>Offset</li>
+        <ul>
+          <li>offset in Direct Node if this is a data block</li>
+          <li>0 if this is a node block</li>
+        </ul>
+      </ul>
+      <li>Footer</li>
+      <ul>
+        <li>Type: data or node. f2fs does not mix data block and node block in the same segment </li>
+      </ul>
+    </ol>
+  </td>
+</tr>
+</table>
+
 ## node
 <table>
 <tr><td width="35%">figure</td><td>description</td></tr>
@@ -185,72 +251,6 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <ul>
       	<li>node offset, is the numbering of the tree structure from top to down and left to right : the offset of I Node is 0, offset of the first and second Direct Node are 1 and 2, offset of the first and second Indirect Node are 3 and 4+1018, and so on...</li>
       	<li>data offset</li>
-      </ul>
-    </ol>
-  </td>
-</tr>
-</table>
-
-## nat/sit/ssa
-<table>
-<tr><td>figure</td><td>description</td></tr>
-<tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180914285-503a452c-2aed-44b9-baa5-67b1f5b7f319.png" width="240"></img></td>
-  <td>
-    <ol>
-      <li>NAT is organized in 4K sized blocks, an NAT block accommodates N==455 NAT entries</li>
-      <li>Version, every time the BlkAddr is changed from non-NULL_ADDR to NULL_ADDR , Version will increase by 1</li>
-      <li>INO</li>
-      <li>BlkAddr</li>
-      <ul>
-        <li>NULL_ADDR, the NAT entry is free for allocating</li>
-        <li>NEW_ADDR, the NAT entry is allocated but node is not allocated</li>        
-        <li>COMPRESS_ADDR</li>
-        <li>Used (none of the above), the NAT entry is allocated and node is allocated, BlkAddr is the address of the node</li>
-      </ul>
-    </ol>
-  </td>
-</tr>
-<tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180914330-e21e72c3-1f55-4f6e-b4c1-70768703738d.png" width="240"></img></td>
-  <td>
-    <ol>
-      <li>SIT is organized in 4K sized blocks, a SIT block accommodates N==55 SIT entries</li>
-      <li>Blocks, is consist of the following components</li>
-      <ul>
-        <li>bits 0-9, is the allocated block count in the segment</li>
-        <li>bits 10-15, is the segment temperature : hot/warm/cold</li>
-      </ul>
-      <li>BlockBitmap, every allocated block in this segment has its bit set in this bitmap</li>
-      <li>Mtime, average access time of the segment</li>
-      <ul>
-        <li>when a block in this segment is allocated or freed, the access time is calculated and averaged with Mtime</li>
-        <li>is used in victim segment selection</li>
-      </ul>
-    </ol>
-  </td>
-</tr>
-<tr valign="top">
-  <td><img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="240"></img></td>
-  <td>
-    <ol>
-      <li>SSA entry is the summary of block in segment, each block has 1 entry</li>
-      <ul>
-        <li>NID</li>
-        <li>Version</li>
-        <ul>
-          <li>copy of NAT entry version of Direct Node if this is a data block</li>
-          <li>0 if this is a node block</li>
-        </ul>
-        <li>Offset</li>
-        <ul>
-          <li>offset in Direct Node if this is a data block</li>
-          <li>0 if this is a node block</li>
-        </ul>
-      </ul>
-      <li>Footer</li>
-      <ul>
-        <li>Type: data or node. f2fs does not mix data block and node block in the same segment </li>
       </ul>
     </ol>
   </td>
