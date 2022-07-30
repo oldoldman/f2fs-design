@@ -5,7 +5,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <ol>
   <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#f2fs">F2FS</a></li>
   <ol>
-    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#disk layout overview">disk layout</a></li>
+    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#disk-layout">disk layout</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#checkpoint">checkpoint</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node">node</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-config">node config, file size, etc.</a></li>
@@ -25,7 +25,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 </ol>
 
 # F2FS
-## disk layout overview
+## disk layout
 <table>
 <tr><td width="25%">figure</td><td>description</td></tr>
 <tr valign="top">
@@ -42,22 +42,16 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ul>
      <li>allocated block count of the segment</li>
      <li>bitmap of allocated blocks</li>
-     <li>segment type : hot/warm/cold</li>
-     <li>the average access time of the segment , which is used in victim segment selection</li>
-     <li>when a block is allocated or freed , the access time is calculated and averaged with the segment average access time</li>
+     <li>segment temperature</li>
+     <li>the average access time of the segment</li>
+     <li> refer to <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#natsitssa">nat/sit/ssa</a> for detail</li>
     </ul>
     <li>NAT is basicly an array of NAT entries , indexed by Node ID</li>
     <li>NAT entry has following information</li>
     <ul>
-     <li>NAT entry version , every time the node block address is changed from non-NULL_ADDR to NULL_ADDR , the version will increase by 1</li>
-     <li>inode id</li>
-     <li>node block address</li>
-     <ul>
-       <li>Used , the NAT entry is allocated and node has allocated</li>
-       <li>NULL_ADDR, the NAT entry is free for allocating</li>
-       <li>NEW_ADDR, the NAT entry is allocated but node is not allocated</li>
-       <li>COMPRESS_ADDR</li>
-     </ul>
+     <li>version</li>
+     <li>I Node identifier</li>
+     <li>block address</li>
     </ul>
     <li>SSA is basicly an array of SSA entry, indexed by Segment No. the size of SSA entry is 4K</li>
     <li>SSA entry has following information</li>
@@ -176,13 +170,35 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180914285-503a452c-2aed-44b9-baa5-67b1f5b7f319.png" width="240"></img></td>
   <td>
-  
+    <ol>
+      <li>Version, every time the BlkAddr is changed from non-NULL_ADDR to NULL_ADDR , Version will increase by 1</li>
+      <li>INO</li>
+      <li>BlkAddr</li>
+      <ul>
+        <li>NULL_ADDR, the NAT entry is free for allocating</li>
+        <li>NEW_ADDR, the NAT entry is allocated but node is not allocated</li>
+        <li>Used, the NAT entry is allocated and node is allocated</li>
+        <li>COMPRESS_ADDR</li>
+      </ul>
+    </ol>
   </td>
 </tr>
 <tr valign="top">
   <td><img src="https://user-images.githubusercontent.com/13962657/180914330-e21e72c3-1f55-4f6e-b4c1-70768703738d.png" width="240"></img></td>
   <td>
-  
+    <ol>
+      <li>Blocks, is consist of the following components</li>
+      <ul>
+        <li>bits 0-9, is the allocated block count in the segment</li>
+        <li>bits 10-15, is the segment temperature : hot/warm/cold</li>
+      </ul>
+      <li>BlockBitmap, every allocated block in this segment has its bit set in this bitmap</li>
+      <li>Mtime, average access time of the segment</li>
+      <ul>
+        <li>when a block in this segment is allocated or freed, the access time is calculated and averaged with Mtime</li>
+        <li>is used in victim segment selection</li>
+      </ul>
+    </ol>
   </td>
 </tr>
 <tr valign="top">
