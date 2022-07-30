@@ -59,13 +59,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
        <li>COMPRESS_ADDR</li>
      </ul>
     </ul>
-    <li>SSA is basicly an array of SSA entry, indexed by Segment No</li>
+    <li>SSA is basicly an array of SSA entry, indexed by Segment No. the size of SSA entry is 4K</li>
     <li>SSA entry has following information</li>
     <ul>
-      <li>512 summary entries for the 512 blocks of the segment</li>
+      <li>summary entries</li>
       <li>journal</li>
-      <li>segment type : data or node</li>
+      <li>segment type</li>
       <li>check sum</li>
+      <li>refer to <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#natsitssa">nat/sit/ssa</a> for detail
     </ul>
   <ol>
   </td>
