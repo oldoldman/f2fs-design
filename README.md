@@ -151,7 +151,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       </ul>
       <li>file size and configuration(I is the size that can be inlined, N==1018)</li>
       <table>
-        <tr><td>file size</td><td>node config (cumulated)</td><td>NID Index</td></tr>
+        <tr><td>file size</td><td>node config (cumulative)</td><td>NID Index</td></tr>
         <tr><td><=I</td><td>I Node</td><td>-</td></tr>
         <tr><td><=I+N*4K</td><td>Direct Node</td><td>0</td></tr>
         <tr><td><=I+N*4K*2</td><td>Direct Node</td><td>1</td></tr>
