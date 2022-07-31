@@ -278,9 +278,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ol>
     <li>locks</li>
     <table>
-      <tr><td>name</td><td>type</td><td>description</td></tr>
-      <tr><td>nid_list_lock</td><td>spin</td><td>protect FreeNID Cache <br> FreeNIDBitmaps</td></tr>
-      <tr><td>nat_tree_lock</td><td>RW</td><td>protect NatE Cache</td></tr>
+      <tr><td>name</td><td>type</td><td>protect</td></tr>
+      <tr><td>nid_list_lock</td><td>spin</td><td>FreeNID Cache /<br> FreeNIDBitmaps</td></tr>
+      <tr><td>nat_tree_lock</td><td>RW</td><td>NatE Cache</td></tr>
       <tr><td>build_lock</td><td>mutex</td><td></td></tr>
     </table>
     <li>data flows</li>
@@ -361,12 +361,12 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ol>
       <li>locks</li>
       <table>
-        <tr><td>name</td><td>type</td><td>description</td></tr>
-        <tr><td>segmap_lock</td><td>spin</td><td>protect FreeSegBitmap <br> FreeSecBitmap</td></tr>
-        <tr><td>sentry_lock</td><td>RW</td><td>protect SitE Cache</td></tr>
-        <tr><td>journal_rwsem</td><td>RW</td><td>protect NAT/SIT journal in CurSegs[n]</td></tr>
-        <tr><td>seglist_lock</td><td>mutex</td><td>protect DirtySegBitmaps <br> DirtySecBitmap <br> VictimSecBitmap</td></tr>
-        <tr><td>curseg_mutex</td><td>mutex</td><td>protect CurSegs[n]</td></tr>
+        <tr><td>name</td><td>type</td><td>protect</td></tr>
+        <tr><td>segmap_lock</td><td>spin</td><td>FreeSegBitmap /<br> FreeSecBitmap</td></tr>
+        <tr><td>sentry_lock</td><td>RW</td><td>SitE Cache</td></tr>
+        <tr><td>journal_rwsem</td><td>RW</td><td>NAT/SIT journal in CurSegs[n]</td></tr>
+        <tr><td>seglist_lock</td><td>mutex</td><td>DirtySegBitmaps /<br> DirtySecBitmap /<br> VictimSecBitmap</td></tr>
+        <tr><td>curseg_mutex</td><td>mutex</td><td>CurSegs[n]</td></tr>
       </table>
       <li>data flows</li>
       <ul>
