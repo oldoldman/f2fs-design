@@ -136,7 +136,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/180914285-503a452c-2aed-44b9-baa5-67b1f5b7f319.png" width="240"></img></td>
   <td>
     <ol>
-      <li>NAT is organized in 4K sized blocks, an NAT block accommodates N==455 NAT entries</li>
+      <li>NAT is organized in 4K sized blocks, an NAT block accommodates 455 NAT entries</li>
       <li>Version, every time the BlkAddr is changed from non-NULL_ADDR to NULL_ADDR , Version will increase by 1</li>
       <li>INO</li>
       <li>BlkAddr</li>
@@ -153,7 +153,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/180914330-e21e72c3-1f55-4f6e-b4c1-70768703738d.png" width="240"></img></td>
   <td>
     <ol>
-      <li>SIT is organized in 4K sized blocks, a SIT block accommodates N==55 SIT entries</li>
+      <li>SIT is organized in 4K sized blocks, a SIT block accommodates 55 SIT entries</li>
       <li>Blocks, is consist of the following components</li>
       <ul>
         <li>bits 0-9, is the allocated block count in the segment</li>
@@ -172,7 +172,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="240"></img></td>
   <td>
     <ol>
-      <li>SSA summary entry is the summary of block in segment, there are N==512 such entries for 512 blocks in a segment</li>
+      <li>SSA summary entry is the summary of a block in a segment, there are 512 such entries</li>
       <ul>
         <li>NID</li>
         <li>Version</li>
