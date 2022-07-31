@@ -264,7 +264,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <tr><td>name</td><td>type</td><td>description</td></tr>
   <tr><td>cp_lock</td><td>spin</td><td>description</td></tr>
   <tr><td>cp_global_sem</td><td>RW</td><td>description</td></tr>
-  <tr><td>cp_rwsem</td><td>RW</td><td>description</td></tr>
+  <tr><td>cp_rwsem</td><td>RW</td><td>write, when checking point<br>read, when fs operation</td></tr>
   <tr><td>locks on Node Manager</td><td>-</td><td><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-manager">Node Manager</a></td></tr>
   <tr><td>locks on Segment Manager</td><td>-</td><td><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-manager">Segment Manager</a></td></tr>
 </table>
