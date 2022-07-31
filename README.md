@@ -93,7 +93,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ol>
       <li>Header and Footer, they are indentical if this is a valid checkpoint, have following information</li>
       <ul>
-        <li>size (in unit of 4K block) of checkpoint : from Header to Footer</li>
+        <li>size (in unit of block) of checkpoint : from Header to Footer</li>
+        <li>current segments : segment No, current block address, allocation type etc.</li>
         <li>NAT version bitmap</li>
         <li>SIT version bitmap</li>
       </ul>
