@@ -440,7 +440,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 ### checking point
 ### victim selection
 ### segment selection
-when there is no free block for a current segment, f2fs will select a new segment. if the f2fs there is need SSR, f2fs will select a segment from dirty segments, or else f2fs will select a segment from free segments.
+when there is no free block for a current segment, f2fs will select a new segment. if the f2fs there is need for SSR(Slack Space Recycling), f2fs will select a segment from dirty segments, or else f2fs will select a segment from free segments.
 #### free segment selection
 #### dirty segment selection
 ### gc
