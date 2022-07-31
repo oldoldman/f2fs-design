@@ -99,9 +99,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       </ul>
       <li>Payload, if Header can not accommodate the SIT version bitmap, it will be stored in Payload, or else this area is empty</li>
       <li>Orphan inode, if any, or else this area is empty</li>
-      <li>DataSummary, snapshot of the current data segments, has 2 format</li>
+      <li>DataSummary, snapshot of the current data segments, has 2 formats</li>
         <ul>
-          <li>compact format : if size of NAT journal + SIT journal + SSA summary entries is less than 2 blocks</li>
+          <li>compact format : if size of NAT journal + SIT journal + SSA summary entries is less than 3 blocks</li>
             <ol>
               <li>NAT journal</li>
               <li>SIT journal</li>
@@ -116,7 +116,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
             <li>SSA entry for cold data</li>
           </ol>
         </ul>
-      <li>NodeSummary : if checking point reason is CP_UMOUNT or CP_FASTBOOT, or else NodeSummary is empty</li>
+      <li>NodeSummary : snapshot of current node segments if checking point reason is CP_UMOUNT or CP_FASTBOOT, or else this area is empty</li>
       <ol>
         <li>SSA entry for hot node</li>
         <li>SSA entry for warm node</li>
