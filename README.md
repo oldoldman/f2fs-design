@@ -262,9 +262,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 ## Locks
 <table>
   <tr><td>name</td><td>type</td><td>description</td></tr>
-  <tr><td>cp_lock</td><td>spin lock</td><td>description</td></tr>
-  <tr><td>cp_global_sem</td><td>rw lock</td><td>description</td></tr>
-  <tr><td>cp_rwsem</td><td>rw lock</td><td>description</td></tr>
+  <tr><td>cp_lock</td><td>spin</td><td>description</td></tr>
+  <tr><td>cp_global_sem</td><td>RW</td><td>description</td></tr>
+  <tr><td>cp_rwsem</td><td>RW</td><td>description</td></tr>
   <tr><td>locks on Node Manager</td><td>-</td><td><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-manager">Node Manager</a></td></tr>
   <tr><td>locks on Segment Manager</td><td>-</td><td><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-manager">Segment Manager</a></td></tr>
 </table>
@@ -279,9 +279,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>locks</li>
     <table>
       <tr><td>name</td><td>type</td><td>description</td></tr>
-      <tr><td>nid_list_lock</td><td>spin lock</td><td>used to protect FreeNID Cache / FreeNIDBitmaps</td></tr>
-      <tr><td>nat_tree_lock</td><td>rw lock</td><td>used to protect NatE Cach</td></tr>
-      <tr><td>build_lock</td><td>mutex</td><td>description</td></tr>
+      <tr><td>nid_list_lock</td><td>spin</td><td>protect FreeNID Cache / FreeNIDBitmaps</td></tr>
+      <tr><td>nat_tree_lock</td><td>RW</td><td>protect NatE Cache</td></tr>
+      <tr><td>build_lock</td><td>mutex</td><td></td></tr>
     </table>
     <li>data flows</li>
     <ul>
