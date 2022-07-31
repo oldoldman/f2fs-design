@@ -172,7 +172,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td><img src="https://user-images.githubusercontent.com/13962657/180914357-1ead86e6-ce22-46c1-805f-c9a6fc66b997.png" width="240"></img></td>
   <td>
     <ol>
-      <li>SSA entry is the summary of block in segment, each block has 1 entry</li>
+      <li>SSA summary entry is the summary of block in segment, there are N==512 such entries for 512 blocks in a segment</li>
       <ul>
         <li>NID</li>
         <li>Version</li>
