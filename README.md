@@ -444,6 +444,7 @@ when there is no free block for a current segment, f2fs will select a new segmen
 #### free segment selection
 #### dirty segment selection
 ### gc
+gc is the process of cleaning dirty segment, blocks are move from dirty segment to other segments, which makes more free segments.
 
 
 
