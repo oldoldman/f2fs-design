@@ -260,13 +260,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 
 # Linux Implementation
 ## Locks
-<ol>
-  <li>cp_lock, a spin lock</li>
-  <li>cp_global_sem, an rw lock</li>
-  <li>cp_rwsem, an rw lock</li>
-  <li>locks on <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-manager">Node Manager</a></li>
-  <li>locks on <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-manager">Segment Manager</a></li>
-</ol>
+<table>
+  <tr><td>name</td><td>type</td><td>description</td></tr>
+  <tr><td>cp_lock</td><td>spin lock</td><td>description</td></tr>
+  <tr><td>cp_global_sem</td><td>rw lock</td><td>description</td></tr>
+  <tr><td>cp_rwsem</td><td>rw lock</td><td>description</td></tr>
+  <tr><td>locks on Node Manager</td><td>-</td><td><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-manager">Node Manager</a></td></tr>
+  <tr><td>locks on Segment Manager</td><td>-</td><td><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-manager">Segment Manager</a></td></tr>
+</table>
 
 ## Node Manager
 <table>
