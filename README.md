@@ -264,8 +264,8 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <li>cp_lock, a spin lock</li>
   <li>cp_global_sem, an rw lock</li>
   <li>cp_rwsem, an rw lock</li>
-  <li>locks on <a href="">Node Manager</a></li>
-  <li>locks on <a href="">Segment Manager</a></li>
+  <li>locks on <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-manager">Node Manager</a></li>
+  <li>locks on <a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-manager">Segment Manager</a></li>
 </ol>
 
 ## Node Manager
