@@ -58,7 +58,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>magic number, is used to recognize f2fs volume</li>
       <li>major and minor version of f2fs</li>
       <li>sector size, block size</li>
-      <li>sectos per block, blocks per segment (512), segments per section (usually 1, settable by mkfs.f2fs), sections per zone (usually 1)</li>
+      <li>sectors per block, blocks per segment (512), segments per section (usually 1, settable by mkfs.f2fs), sections per zone (usually 1)</li>
     </ul>
     <li>SIT is basicly an array of SIT entries , indexed by Segment No</li>
     <li>SIT entry has following information</li>
@@ -448,7 +448,7 @@ when there is no free block for a current segment, f2fs will select a new segmen
 #### free segment selection
 #### dirty segment selection
 ### gc
-gc is the process of cleaning dirty segment, blocks are move from dirty segment to other segments, which makes more free segments.
+gc is the process of cleaning dirty segment, blocks are moved out from dirty segment to other segments, which makes more free segments.
 
 
 
