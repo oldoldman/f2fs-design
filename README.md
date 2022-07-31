@@ -360,13 +360,14 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   <td>
     <ol>
       <li>locks</li>
-      <ul>
-        <li>segmap_lock, a spin lock, is used to protect FreeSegBitmap / FreeSecBitmap</li>
-        <li>sentry_lock, an rw lock, is used to protect SitE Cache</li>
-        <li>journal_rwsem, an rw lock, is used to protect NAT/SIT journal in CurSegs[n]</li>
-        <li>seglist_lock, a mutex, is used to protect DirtySegBitmaps / DirtySecBitmap / VictimSecBitmap</li>
-        <li>curseg_mutex, a mutex, is used to protect CurSegs[n]</li>        
-      </ul>
+      <table>
+        <tr><td>name</td><td>type</td><td>description</td></tr>
+        <tr><td>segmap_lock</td><td>spin</td><td>protect FreeSegBitmap / FreeSecBitmap</td></tr>
+        <tr><td>sentry_lock</td><td>RW</td><td>protect SitE Cache</td></tr>
+        <tr><td>journal_rwsem</td><td>mutex</td><td>protect NAT/SIT journal in CurSegs[n]</td></tr>
+        <tr><td>seglist_lock</td><td>mutex</td><td>protect DirtySegBitmaps / DirtySecBitmap / VictimSecBitmap</td></tr>
+        <tr><td>curseg_mutex</td><td>mutex</td><td>protect CurSegs[n]</td></tr>
+      </table>
       <li>data flows</li>
       <ul>
         <li>red arrow is the data flow of checkpointing</li>
