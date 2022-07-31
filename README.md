@@ -13,6 +13,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
   </ol>
   <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#linux-implementation">Linux Implementation</a></li>
   <ol>
+    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#locks">Locks</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#node-manager">Node Manager</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-manager">Segment Manager</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#main-processes">Main Processes</a></li>
@@ -258,6 +259,15 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 </table>
 
 # Linux Implementation
+## Locks
+<ol>
+  <li>cp_lock, a spin lock</li>
+  <li>cp_global_sem, an rw lock</li>
+  <li>cp_rwsem, an rw lock</li>
+  <li>locks on <a href="">Node Manager</a></li>
+  <li>locks on <a href="">Segment Manager</a></li>
+</ol>
+
 ## Node Manager
 <table>
 <tr><td width="40%">figure</td><td>description</td></tr>
