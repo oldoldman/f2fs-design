@@ -18,7 +18,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-manager">Segment Manager</a></li>
     <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#main-processes">Main Processes</a></li>
     <ol>
-      <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#checkpointing">checking point</a></li>
+      <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#checking-point">checking point</a></li>
       <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#victim-selection">victim selection</a></li>
       <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-selection">segment selection</a></li>
       <ul>
@@ -437,7 +437,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 </table>
 
 ## main processes
-### checkpointing
+### checking point
 ### victim selection
 ### segment selection
 #### free segment selection
