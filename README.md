@@ -20,6 +20,11 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <ol>
       <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#checkpointing">checking point</a></li>
       <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#victim-selection">victim selection</a></li>
+      <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#segment-selection">segment selection</a></li>
+      <ul>
+        <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#free-segment-selection">free segment selection</a></li>
+        <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#dirty-segment-selection">dirty segment selection</a></li>
+      </ul>
       <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#gc">gc</a></li>
     </ol>
   </ol>
@@ -434,6 +439,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
 ## main processes
 ### checkpointing
 ### victim selection
+### segment selection
+#### free segment selection
+#### dirty segment selection
 ### gc
 
 
