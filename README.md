@@ -271,7 +271,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
         <tr><td><=Isz+N*N*4K*2</td><td>I+D</td><td>3</td></tr>
         <tr><td><=Isz+N*N*N*4K</td><td>I+I+D</td><td>4</td></tr>
       </table>
-      <li>for example, if file size is between Isz and Isz+N*4K, f2fs will allocate the first Direct Node. portion of the file size equal to Isz is stored in I Node, portion greater than Isz is store in Direct Node.</li>
+      <li>for example, if file size is between Isz and Isz+N*4K, f2fs will allocate the first Direct Node. portion of the file size equal to Isz is covered by I Node, portion greater than Isz is covered by the first Direct Node.</li>
       <li>if files size is between Isz+N*4K and Isz+N*4K*2, f2fs will allocate the first and second Direct Node, etc.</li>
       <li>there are 2 kind of offsets in a file : node offset and data offset</li>
       <ul>
