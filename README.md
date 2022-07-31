@@ -279,7 +279,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     <li>locks</li>
     <table>
       <tr><td>name</td><td>type</td><td>description</td></tr>
-      <tr><td>nid_list_lock</td><td>spin</td><td>protect FreeNID Cache / FreeNIDBitmaps</td></tr>
+      <tr><td>nid_list_lock</td><td>spin</td><td>protect FreeNID Cache <br> FreeNIDBitmaps</td></tr>
       <tr><td>nat_tree_lock</td><td>RW</td><td>protect NatE Cache</td></tr>
       <tr><td>build_lock</td><td>mutex</td><td></td></tr>
     </table>
