@@ -362,10 +362,10 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li>locks</li>
       <table>
         <tr><td>name</td><td>type</td><td>description</td></tr>
-        <tr><td>segmap_lock</td><td>spin</td><td>protect FreeSegBitmap / FreeSecBitmap</td></tr>
+        <tr><td>segmap_lock</td><td>spin</td><td>protect FreeSegBitmap <br> FreeSecBitmap</td></tr>
         <tr><td>sentry_lock</td><td>RW</td><td>protect SitE Cache</td></tr>
-        <tr><td>journal_rwsem</td><td>mutex</td><td>protect NAT/SIT journal in CurSegs[n]</td></tr>
-        <tr><td>seglist_lock</td><td>mutex</td><td>protect DirtySegBitmaps / DirtySecBitmap / VictimSecBitmap</td></tr>
+        <tr><td>journal_rwsem</td><td>RW</td><td>protect NAT/SIT journal in CurSegs[n]</td></tr>
+        <tr><td>seglist_lock</td><td>mutex</td><td>protect DirtySegBitmaps <br> DirtySecBitmap <br> VictimSecBitmap</td></tr>
         <tr><td>curseg_mutex</td><td>mutex</td><td>protect CurSegs[n]</td></tr>
       </table>
       <li>data flows</li>
