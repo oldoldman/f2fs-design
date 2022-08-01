@@ -30,7 +30,7 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
       <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#gc">gc</a></li>
     </ol>
   </ol>
-  <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#gap">porting gap</a></li>
+  <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#porting-gap">Porting Gap</a></li>
 </ol>
 
 # F2FS
@@ -450,6 +450,8 @@ when there is no free block for a current segment, f2fs will select a new segmen
 #### dirty segment selection
 ### gc
 gc is the process of cleaning dirty segment, blocks are moved out from dirty segment to other segments, which makes more free segments.
+## Porting Gap
+### Gap1
 
 
 
