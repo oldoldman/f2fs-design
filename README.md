@@ -31,6 +31,9 @@ this repo is notes of Linux f2fs file system in my preparation of porting f2fs t
     </ol>
   </ol>
   <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#porting-gap">Porting Gap</a></li>
+  <ol>
+    <li><a href="https://github.com/oldoldman/f2fs-design/blob/main/README.md#gap1">Gap1</a></li>
+  </ol>
 </ol>
 
 # F2FS
