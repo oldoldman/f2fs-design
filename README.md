@@ -455,7 +455,7 @@ when there is no free block for a current segment, f2fs will select a new segmen
 gc is the process of cleaning dirty segment, blocks are moved out from dirty segment to other segments, which makes more free segments.
 ## Porting Gap
 ### Gap1
-* f2fs use page cache to read node into memory , and will lock the page cache from concurrent access.
+* f2fs use page cache to read node into memory , and will lock the page cache from concurrent access. it has the exclusive semantics.
 * for example, in f2fs_get_dnode_of_data, f2fs will read I Node , if needed, f2fs will allocate a Direct Node, and fill its nid into I Node. if the page cache is not locked, 2 thread might overwrite each other.
 * Windows lacks similar facility.
 
